@@ -1,0 +1,105 @@
+.niche-spasalon {
+    --Primary: #DF9380;
+    --Secondary: #4A231A;
+    --Bg-light: #FBF6F4;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Bricolage Grotesque", sans-serif;
+    --font-main3: "Outfit", sans-serif;
+    --font-main4: "Inter", sans-serif;
+    --font-main5: "Rethink Sans", sans-serif;
+    color: var(--Text-secondary);
+
+    .text-caption-1 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .font-3 {
+        font-family: var(--font-main3);
+    }
+
+    .font-4 {
+        font-family: var(--font-main4);
+    }
+
+    .font-5 {
+        font-family: var(--font-main5);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .navigation>li:hover::after {
+        color: var(--Primary) !important;
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+
+    .navigation > li > a {
+        color: var(--White);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .main-menu .current-menu.has-child::after,
+    .main-menu .current-menu-item.has-child::after {
+        color: var(--Primary) !important;
+    }
+
+    .tf-btn {
+        color: var(--White);
+    }
+
+    .text_primary {
+        color: var(--Text-primary);
+    }
+
+    .tf-btn.btn-bg-white {
+        color: var(--Text-primary);
+    }
+
+    .tf-btn.style-border {
+        color: var(--Text-primary);
+    }
+
+    .shape-linear-circle {
+        background: linear-gradient(180deg, #DF9380 0%, rgba(255, 255, 255, 0) 100%);
+
+        border-radius: 50%;
+        display: block;
+        aspect-ratio: 1/1;
+        max-width: 200px;
+        width: 100%;
+    }
+}
+
+// Written as a standalone, fully zero-specificity rule (both the niche
+// wrapper AND the heading list live inside :where()) instead of nesting it
+// under `.niche-spasalon { ... }` above. Nesting it there gives the compiled
+// selector `.niche-spasalon :where(h1, h2, ...)` — specificity (0,1,0),
+// which TIES `.text_white` (0,1,0) and then falls back to source order;
+// since this stylesheet is pulled in by Header.tsx it ends up bundled after
+// the global reset, so the tie still resolved in the niche's favor and kept
+// forcing headings brown. Specificity 0 here guarantees `.text_white` wins
+// no matter the import order — matching the original CSS's bare
+// `h1, h2, ... { color: var(--Secondary) }` (specificity 0,0,1), which lost
+// to `.text_white` cleanly.
+:where(.niche-spasalon) :where(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+    font-family: var(--font-main2);
+    font-weight: 500;
+    color: var(--Secondary);
+}

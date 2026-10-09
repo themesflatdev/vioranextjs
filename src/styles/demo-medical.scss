@@ -1,0 +1,62 @@
+.niche-medical {
+    --Primary: #196E6E;
+    --Secondary: #E5F2E4;
+    --Bg-light: #F2F7F7;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "IBM Plex Sans", sans-serif;
+    --font-main3: "Manrope", sans-serif;
+    color: var(--Secondary);
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--Text-primary);
+        font-family: var(--font-main2);
+        font-weight: 500;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .tf-btn {
+        padding: 15px 40px;
+
+    }
+
+    .tf-btn.style-border {
+        color: var(--Primary);
+        border-width: 1px;
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .tf-sidebar .tags-list a {
+        color: var(--Primary);
+    }
+
+    .tf-sidebar .tags-list a:hover {
+        background-color: var(--Secondary);
+        border-color: var(--Secondary);
+    }
+}

@@ -1,0 +1,47 @@
+.niche-logistics {
+    --Primary: #F08044;
+    --Secondary: #1A203F;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    color: var(--Text-secondary);
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--Text-primary);
+        font-weight: 600;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation > li > a {
+        color: var(--White);
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+}

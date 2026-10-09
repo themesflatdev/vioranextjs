@@ -1,15 +1,60 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import Script from "next/script";
+import { Plus_Jakarta_Sans, Bricolage_Grotesque, Red_Hat_Display, Rethink_Sans, Manrope, Sora, Instrument_Sans } from "next/font/google";
+import "@/styles/app.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-main",
+  subsets: ["latin", "vietnamese"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin", "vietnamese"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
+
+// demo-insurance.scss's --font-main2/--font-main3/--font-main4 (headings
+// use font-main2 at weight 600) — these were referenced by name in the
+// niche SCSS but never actually loaded as web fonts anywhere, so browsers
+// silently fell back to generic sans-serif instead of the theme's real
+// typefaces.
+const redHatDisplay = Red_Hat_Display({
+  variable: "--font-red-hat-display",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const rethinkSans = Rethink_Sans({
+  variable: "--font-rethink-sans",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+});
+
+// demo-saas.scss's --font-main2 ("Sora", applied via .font-2, e.g. FAQ
+// heading/accordion titles) referenced this family by literal name but it
+// was never actually loaded anywhere — same gap already fixed once for
+// Red Hat Display/Rethink Sans above.
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+});
+
+// demo-healthcoach.scss's --font-main2 ("Instrument Sans", used by EVERY
+// h1-h6 at weight 500, not just an opt-in class) — same never-loaded gap.
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -19,8 +64,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${plusJakartaSans.variable} ${bricolageGrotesque.variable} ${redHatDisplay.variable} ${rethinkSans.variable} ${manrope.variable} ${sora.variable} ${instrumentSans.variable}`}
+    >
+      <body>
+        {children}
+        <Script src="/assets/js/wow.min.js" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

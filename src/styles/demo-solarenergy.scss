@@ -1,0 +1,46 @@
+.niche-solarenergy {
+    --Primary: #B7F063;
+    --Secondary: #1A203F;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Onest", sans-serif;
+    color: var(--Text-secondary);
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: var(--font-main2);
+        color: var(--Text-primary);
+        font-weight: 600;
+    }
+
+    .text-caption-1{
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+}

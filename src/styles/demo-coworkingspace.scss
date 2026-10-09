@@ -1,0 +1,86 @@
+.niche-coworkingspace {
+    --Primary: #E7F64C;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--Text-primary);
+        font-weight: 600;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .font-2 {
+        font-family: var(--font-main2);
+    }
+
+    .font-3 {
+        font-family: var(--font-main3);
+    }
+
+    .font-4 {
+        font-family: var(--font-main4);
+    }
+
+    .navigation > li > a {
+        color: var(--White);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+
+    .main-menu.style-1 .navigation>li>a::before {
+        background-color: var(--White);
+    }
+
+    .main-menu.style-1 .current-menu>a {
+        color: var(--White) !important;
+    }
+
+    .main-menu .current-menu::after {
+        color: var(--White) !important;
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu::after,
+    .main-menu .current-menu-item::after {
+        color: var(--Primary) !important;
+    }
+
+    .tf-btn {
+        color: var(--Text-primary);
+    }
+
+    .tf-btn.style-border {
+        color: var(--White);
+    }
+
+    .tf-btn.btn-bg-white {
+        color: var(--Text-primary);
+    }
+}

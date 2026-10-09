@@ -1,0 +1,47 @@
+/* ---------------------------------------------------------
+    * Name: Viora AI-powered Multipurpose HTML Themes
+    * Version: 1.0.0
+    * Author: Themesflat
+    * Author URI: http://themesflat.com 
+
+	* Abstracts variable
+    
+    * Reset css styles
+
+    * Components
+
+    * section
+
+    * dashboard
+
+    * Responsive
+ ------------------------------------------------------------------------------ */
+
+/*------------ Vendor (bootstrap, swiper, animate, icomoon) ---------------- */
+/* Loaded first so the theme reset/components below always win the cascade
+   — matches the original HTML's <link> order (vendor before styles.css). */
+@use "./vendor/bootstrap";
+@use "./vendor/bootstrap-select";
+@use "./vendor/swiper-bundle";
+@use "./vendor/animate";
+@use "./vendor/icomoon";
+@use "./vendor/jquery-ui";
+@use "./vendor/atropos";
+
+/*--------- Abstracts variable ---------- */
+@use "./abstracts/index" as abstracts;
+
+/*---------- Reset css styles ----------- */
+@use "reset";
+
+/*------------ Components ---------------- */
+@use "./component/index";
+
+/*------------ widgets ---------------- */
+@use "./widgets";
+
+/*------------ sections ---------------- */
+@use "./sections";
+
+/*------------ landing ---------------- */
+@use "./landing";

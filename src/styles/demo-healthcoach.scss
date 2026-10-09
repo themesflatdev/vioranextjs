@@ -1,0 +1,80 @@
+.niche-healthcoach {
+    --Primary: #10483D;
+    --Secondary: #C3EFE6;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Instrument Sans", sans-serif;
+    color: var(--Text-secondary);
+
+    .smooth-wrapper-healthcoach {
+        background-color: var(--Bg-light);
+    }
+
+    :where(&) {
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        h5,
+        .h5,
+        h6,
+        .h6 {
+            font-family: var(--font-main2);
+            font-weight: 500;
+            color: var(--Primary);
+        }
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .text_primary {
+        color: var(--Text-primary);
+    }
+
+    .text_secondary-color {
+        color: var(--Secondary);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation li>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li a {
+        color: var(--Primary);
+    }
+
+    .tf-btn {
+        color: var(--White);
+    }
+
+    .tf-btn.style-border {
+        color: var(--Primary);
+    }
+
+    .tf-btn.btn-bg-white {
+        color: var(--Text-primary);
+    }
+
+    .tf-btn.btn-bg-secondary {
+        background-color: var(--Secondary);
+        color: var(--Primary);
+    }
+
+    .text-caption-1 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}

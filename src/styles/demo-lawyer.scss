@@ -1,0 +1,79 @@
+.niche-lawyer {
+    --Primary: #B38B2E;
+    --Secondary: #1B263B;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Merriweather", serif;
+    color: var(--Text-secondary);
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation li > a {
+        color: var(--White);
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+
+    .main-menu.style-1 .navigation>li>a::before {
+        background-color: var(--White);
+    }
+
+    .main-menu.style-1 .current-menu>a {
+        color: var(--White) !important;
+    }
+
+    .main-menu .current-menu::after {
+        color: var(--White) !important;
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--White);
+    }
+
+    .tf-btn.style-border-2 {
+        padding: 14px 37px;
+        border-width: 2px;
+    }
+}
+
+// Zero-specificity wrapper (:where()) so this keeps the SAME effective
+// specificity as the original unscoped `h1, h2... { color: ... }` rule in
+// Lawyer.css (element selector only) — nesting it inside `.niche-lawyer`
+// (a class) would add specificity the original never had and would beat
+// single-class utility overrides like `.text_white` on dark sections
+// (section-service-16, section-pricing-9...), which the real site relies on.
+:where(.niche-lawyer) {
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--Text-primary);
+        font-family: var(--font-main2);
+        font-weight: 400;
+    }
+}

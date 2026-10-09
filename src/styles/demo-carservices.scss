@@ -1,0 +1,65 @@
+.niche-carservices {
+    --Primary: #F44649;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Instrument Sans", sans-serif;
+    color: var(--Text-muted);
+
+    .smooth-wrapper-carservices {
+        background-color: var(--Bg-dark);
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--White);
+        font-family: var(--font-main2);
+        font-weight: 500;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+
+    .navigation li>a {
+        color: var(--White);
+    }
+
+    .navigation .submenu li a {
+        color: var(--White);
+    }
+
+    .navigation .submenu {
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: var(--Bg-dark);
+    }
+
+    .navigation .submenu li:not(:last-child) {
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}

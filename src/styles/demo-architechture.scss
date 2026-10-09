@@ -1,0 +1,88 @@
+.niche-architechture {
+    --Primary: #0A0A0A;
+    --Secondary: #1B263B;
+    --font-main: "Plus Jakarta Sans", sans-serif;
+    --font-main2: "Space Grotesk", sans-serif;
+    --font-main3: 'Rift', sans-serif;
+    color: var(--Text-secondary);
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--Text-primary);
+        font-family: var(--font-main2);
+        font-weight: 400;
+    }
+
+    .font-main {
+        font-family: var(--font-main);
+    }
+
+    .font-3 {
+        font-family: var(--font-main3);
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--Primary);
+    }
+
+    .navigation .submenu li:hover>a {
+        color: var(--Primary);
+    }
+
+    .main-menu .current-menu>a,
+    .main-menu .current-menu-item>a {
+        color: var(--Primary) !important;
+    }
+
+    .navigation > li > a {
+        color: var(--White);
+    }
+
+    .navigation li.has-child::after {
+        color: var(--White);
+    }
+
+    .main-menu.style-1 .navigation>li>a::before {
+        background-color: var(--White);
+    }
+
+    .main-menu.style-1 .current-menu>a {
+        color: var(--White) !important;
+    }
+
+    .main-menu .current-menu::after {
+        color: var(--White) !important;
+    }
+
+    .main-menu .navigation>li:hover>a {
+        color: var(--White) !important;
+    }
+
+    .main-menu.style-2 .navigation>li>a::before {
+        background-color: var(--White);
+    }
+
+    .main-menu .navigation > li:hover::after {
+        color: var(--White);
+    }
+
+    #menu-mobile-menu li.active > a {
+        color: var(--White);
+        opacity: 1;
+    }
+
+    #menu-mobile-menu li > a {
+        color: var(--White);
+        opacity: 0.7;
+    }
+}
