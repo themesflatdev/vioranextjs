@@ -16,7 +16,6 @@
     h6,
     .h6 {
         font-family: var(--font-main2);
-        color: var(--Text-primary);
     }
 
     .font-main {
@@ -52,4 +51,16 @@
     .btn-hover-animate-2.btn-bg-White-3::after {
         background: var(--Primary);
     }
+}
+
+// Declared OUTSIDE `.niche-construction { ... }` on purpose: nesting a bare
+// `:where(h1, ...)` inside that block still compiles to
+// `.niche-construction :where(...)` — specificity (0,1,0), which TIES
+// `.text_white` (0,1,0) and then wins on source order (this file loads after
+// the global reset), forcing headings dark even with `.text_white` applied.
+// Wrapping the ancestor itself in :where() too gives the whole selector zero
+// specificity, matching the original bare `h1, h2, ... { color: ... }` which
+// cleanly lost to `.text_white`.
+:where(.niche-construction) :where(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+    color: var(--Text-primary);
 }

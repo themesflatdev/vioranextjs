@@ -2,6 +2,8 @@
 
 import { useState, type ReactNode } from "react";
 import { useHeaderFixed } from "@/hooks/useHeaderFixed";
+import { useScrollSmoother } from "@/hooks/useScrollSmoother";
+import { useWow } from "@/hooks/useWow";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
@@ -9,6 +11,8 @@ import MobileNav from "./MobileNav";
 export default function HeaderSection({ children }: { children: ReactNode }) {
   const isFixed = useHeaderFixed();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  useScrollSmoother();
+  useWow();
 
   return (
     <div className="niche-architechture">

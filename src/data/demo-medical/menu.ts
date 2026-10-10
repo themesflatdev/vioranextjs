@@ -95,4 +95,3 @@ export const blogMenu: SimpleMenuItem[] = [
 ];
 
 export const contactHref = "/demo-medical/contact";
-export const viewAllDemosHref = "/landing#demos";

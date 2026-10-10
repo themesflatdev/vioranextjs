@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Plus_Jakarta_Sans, Bricolage_Grotesque, Red_Hat_Display, Rethink_Sans, Manrope, Sora, Instrument_Sans } from "next/font/google";
 import "@/styles/app.scss";
+import DemoModalProvider from "@/components/common/DemoModalProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-main",
@@ -69,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${plusJakartaSans.variable} ${bricolageGrotesque.variable} ${redHatDisplay.variable} ${rethinkSans.variable} ${manrope.variable} ${sora.variable} ${instrumentSans.variable}`}
     >
       <body>
-        {children}
+        <DemoModalProvider>{children}</DemoModalProvider>
         <Script src="/assets/js/wow.min.js" strategy="afterInteractive" />
       </body>
     </html>

@@ -8,8 +8,8 @@ import { useEffect, useRef, useState } from "react";
  * the viewport (the original's `isInViewport` checks the whole rect, not
  * just an intersection), never re-running on subsequent scrolls.
  */
-export function useCountUp(target: number, duration: number) {
-  const [value, setValue] = useState(0);
+export function useCountUp(target: number, duration: number, initial = 0) {
+  const [value, setValue] = useState(initial);
   const ref = useRef<HTMLElement | null>(null);
   const animatedRef = useRef(false);
 

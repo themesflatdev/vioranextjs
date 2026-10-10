@@ -18,7 +18,6 @@
     h6,
     .h6 {
         font-family: var(--font-main2);
-        color: var(--Text-primary);
         font-weight: 600;
     }
 
@@ -43,4 +42,26 @@
     .main-menu .current-menu-item>a {
         color: var(--Primary) !important;
     }
+}
+
+// Declared OUTSIDE `.niche-solarenergy { ... }` on purpose, and only the
+// ANCESTOR is wrapped in `:where()` — see the identical note in
+// demo-agriculturefarming.scss. Fully wrapping the whole rule in `:where()`
+// loses to Bootstrap's bare `h1, h2, ...` reset (specificity (0,0,1)); only
+// wrapping the ancestor keeps `h1`/`h2`/... at (0,0,1) (a tie broken by load
+// order in our favor) while still cleanly losing to any `.text_white` class
+// on the same element.
+:where(.niche-solarenergy) h1,
+:where(.niche-solarenergy) .h1,
+:where(.niche-solarenergy) h2,
+:where(.niche-solarenergy) .h2,
+:where(.niche-solarenergy) h3,
+:where(.niche-solarenergy) .h3,
+:where(.niche-solarenergy) h4,
+:where(.niche-solarenergy) .h4,
+:where(.niche-solarenergy) h5,
+:where(.niche-solarenergy) .h5,
+:where(.niche-solarenergy) h6,
+:where(.niche-solarenergy) .h6 {
+    color: var(--Text-primary);
 }

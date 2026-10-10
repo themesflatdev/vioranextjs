@@ -16,7 +16,6 @@
     .h5,
     h6,
     .h6 {
-        color: var(--Text-primary);
         font-weight: 600;
     }
 
@@ -44,4 +43,28 @@
     .navigation li.has-child::after {
         color: var(--White);
     }
+}
+
+// Declared OUTSIDE `.niche-logistics { ... }` on purpose, with only the
+// ANCESTOR wrapped in `:where()` — see demo-agriculturefarming.scss for the
+// full rationale. In short: Bootstrap's own reset (`h1, h2, ... { color:
+// var(--bs-heading-color) }`) has specificity (0,0,1) and resolves to the
+// wrong inherited color since `--bs-heading-color` is undefined; `.text_white`
+// has specificity (0,1,0) and must keep winning on dark sections. Keeping the
+// heading selectors unwrapped gives (0,0,1)/(0,1,0), tying both Bootstrap
+// forms (broken in our favor by source order) while still losing cleanly to
+// any `text_white`/`text-white` class on the same element.
+:where(.niche-logistics) h1,
+:where(.niche-logistics) .h1,
+:where(.niche-logistics) h2,
+:where(.niche-logistics) .h2,
+:where(.niche-logistics) h3,
+:where(.niche-logistics) .h3,
+:where(.niche-logistics) h4,
+:where(.niche-logistics) .h4,
+:where(.niche-logistics) h5,
+:where(.niche-logistics) .h5,
+:where(.niche-logistics) h6,
+:where(.niche-logistics) .h6 {
+    color: var(--Text-primary);
 }

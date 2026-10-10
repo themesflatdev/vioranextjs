@@ -18,7 +18,6 @@
     .h5,
     h6,
     .h6 {
-        color: var(--Text-primary);
         font-family: var(--font-main2);
         font-weight: 400;
     }
@@ -85,4 +84,15 @@
         color: var(--White);
         opacity: 0.7;
     }
+}
+
+// Declared OUTSIDE `.niche-architechture { ... }` — see demo-construction.scss
+// for the full explanation: a bare `:where(h1, ...)` nested inside still
+// compiles to `.niche-architechture :where(...)` (specificity 0,1,0), which
+// ties `.text_white` (0,1,0) and wins on source order. Wrapping the ancestor
+// itself in :where() too gives the whole selector zero specificity, matching
+// the original bare `h1, h2, ... { color: ... }` which cleanly lost to
+// `.text_white`.
+:where(.niche-architechture) :where(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+    color: var(--Text-primary);
 }

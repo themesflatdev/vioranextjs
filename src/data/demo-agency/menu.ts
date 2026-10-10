@@ -78,4 +78,3 @@ export const projectMenu: SimpleMenuItem[] = [
 ];
 
 export const contactHref = "/demo-agency/contact";
-export const viewAllDemosHref = "/landing#demos";

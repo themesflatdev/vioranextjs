@@ -1,7 +1,25 @@
+import HeroSection from "@/components/homes/demo-architechture/HeroSection";
+import AboutSection from "@/components/homes/demo-architechture/AboutSection";
+import ProcessSection from "@/components/homes/demo-architechture/ProcessSection";
+import PortfolioSection from "@/components/homes/demo-architechture/PortfolioSection";
+import ServiceSection from "@/components/homes/demo-architechture/ServiceSection";
+import BannerSection from "@/components/homes/demo-architechture/BannerSection";
+import TeamSection from "@/components/homes/demo-architechture/TeamSection";
+import InstagramSection from "@/components/homes/demo-architechture/InstagramSection";
+
 export default function ArchitechtureHome() {
   return (
-    <main style={{ padding: "120px 24px", minHeight: "150vh" }}>
-      <p>Trang chủ niche architechture — nội dung sẽ được convert ở bước kế tiếp.</p>
-    </main>
+    <>
+      <HeroSection />
+      <div className="main-content">
+        <AboutSection />
+        <ProcessSection />
+        <PortfolioSection />
+        <ServiceSection />
+        <BannerSection />
+        <TeamSection />
+        <InstagramSection />
+      </div>
+    </>
   );
 }

@@ -61,4 +61,3 @@ export {
   blogMenu,
   contactHref,
 } from "@/data/demo-corporate/menu";
-export const viewAllDemosHref = "/landing#demos";

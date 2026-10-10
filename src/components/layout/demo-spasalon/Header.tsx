@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useDemoModal } from "@/components/common/DemoModalProvider";
 import {
   desktopDemosFeatured,
   pagesMenu,
@@ -9,7 +10,6 @@ import {
   projectMenu,
   blogMenu,
   contactHref,
-  viewAllDemosHref,
 } from "@/data/demo-spasalon/menu";
 import type { SimpleMenuItem } from "@/data/demo-spasalon/menu";
 
@@ -44,6 +44,7 @@ function ToggleText({ children }: { children: string }) {
 }
 
 export default function Header({ fixed = false, isFixed = false, onOpenMobileNav }: HeaderProps) {
+  const { openDemoModal } = useDemoModal();
   const headerClassName = fixed
     ? `header style-9 header-fixed${isFixed ? " is-fixed" : ""}`
     : "header style-9";
@@ -96,9 +97,16 @@ export default function Header({ fixed = false, isFixed = false, onOpenMobileNav
                       ))}
                     </div>
                     <div className="text-center">
-                      <Link href={viewAllDemosHref} className="tf-btn">
+                      <a
+                        href="#modalDemo"
+                        className="tf-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          openDemoModal();
+                        }}
+                      >
                         View all demos (20)
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

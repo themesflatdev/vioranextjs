@@ -2,22 +2,6 @@
     --Primary: #E7F64C;
     --font-main: "Plus Jakarta Sans", sans-serif;
 
-    h1,
-    .h1,
-    h2,
-    .h2,
-    h3,
-    .h3,
-    h4,
-    .h4,
-    h5,
-    .h5,
-    h6,
-    .h6 {
-        color: var(--Text-primary);
-        font-weight: 600;
-    }
-
     .font-main {
         font-family: var(--font-main);
     }
@@ -83,4 +67,16 @@
     .tf-btn.btn-bg-white {
         color: var(--Text-primary);
     }
+}
+
+// Zero-specificity wrapper (:where()) so this keeps the SAME effective
+// specificity as the original unscoped `h1, h2... { color: ... }` rule in
+// coworking-space.css (element selector only) — nesting it inside
+// `.niche-coworkingspace` (a class) would add specificity the original
+// never had and would beat single-class utility overrides like
+// `.text_white` on dark sections (HeroSlider, VideoBannerSection...),
+// which the real site relies on.
+:where(.niche-coworkingspace) :where(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+    color: var(--Text-primary);
+    font-weight: 600;
 }

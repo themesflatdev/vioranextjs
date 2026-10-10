@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useDemoModal } from "@/components/common/DemoModalProvider";
 import {
   desktopDemosFeatured,
   pagesMenu,
@@ -9,7 +10,6 @@ import {
   servicesMenu,
   blogMenu,
   contactHref,
-  viewAllDemosHref,
 } from "@/data/demo-restaurant/menu";
 import type { SimpleMenuItem } from "@/data/demo-restaurant/menu";
 
@@ -43,6 +43,7 @@ function ToggleText({ children }: { children: string }) {
 }
 
 export default function Header({ fixed = false, isSticky = false, onOpenMobileNav }: HeaderProps) {
+  const { openDemoModal } = useDemoModal();
   const headerClassName = fixed
     ? `header style-5 header-sticky${isSticky ? " is-sticky" : ""}`
     : "header style-5";
@@ -87,9 +88,16 @@ export default function Header({ fixed = false, isSticky = false, onOpenMobileNa
                       ))}
                     </div>
                     <div className="text-center">
-                      <Link href={viewAllDemosHref} className="tf-btn btn-mega-2">
+                      <a
+                        href="#modalDemo"
+                        className="tf-btn btn-mega-2"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          openDemoModal();
+                        }}
+                      >
                         View all demos (20)
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

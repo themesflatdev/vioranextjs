@@ -1,6 +1,71 @@
 // settings
 $fontIcon: "icomoon";
 
+// Rift font (used by demo-construction and demo-architechture via --font-main2)
+// loaded from the original theme's assets/font/fonts.css — declared globally
+// (not inside .niche-*) since it's shared by more than one niche.
+@font-face {
+    font-family: "Rift";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Demi.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: italic;
+    font-weight: 300;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Light Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: italic;
+    font-weight: 500;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Medium Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Rift";
+    font-style: italic;
+    font-weight: 700;
+    src: local("Rift"), url("https://fonts.cdnfonts.com/s/60110/Rift Bold Italic.woff") format("woff");
+}
 
 :root {
     // font

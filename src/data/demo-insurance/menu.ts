@@ -81,4 +81,3 @@ export const blogMenu: SimpleMenuItem[] = [
 ];
 
 export const contactHref = "/demo-insurance/contact";
-export const viewAllDemosHref = "/landing#demos";

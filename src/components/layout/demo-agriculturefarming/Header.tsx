@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useDemoModal } from "@/components/common/DemoModalProvider";
 import {
   desktopDemosFeatured,
   pagesMenu,
@@ -9,7 +10,6 @@ import {
   servicesMenu,
   blogMenu,
   contactHref,
-  viewAllDemosHref,
 } from "@/data/demo-agriculturefarming/menu";
 import type { SimpleMenuItem } from "@/data/demo-agriculturefarming/menu";
 
@@ -45,6 +45,7 @@ function ToggleText({ children }: { children: string }) {
 // prompt agriculturefarming-header-final.md). Both the fixed and regular
 // header variants here are just nav + icons.
 export default function Header({ fixed = false, isSticky = false, onOpenMobileNav }: HeaderProps) {
+  const { openDemoModal } = useDemoModal();
   const headerClassName = fixed
     ? `header style-17 header-sticky${isSticky ? " is-sticky" : ""}`
     : "header style-17";
@@ -94,9 +95,16 @@ export default function Header({ fixed = false, isSticky = false, onOpenMobileNa
                       ))}
                     </div>
                     <div className="text-center">
-                      <Link href={viewAllDemosHref} className="tf-btn">
+                      <a
+                        href="#modalDemo"
+                        className="tf-btn"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          openDemoModal();
+                        }}
+                      >
                         View all demos (20)
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

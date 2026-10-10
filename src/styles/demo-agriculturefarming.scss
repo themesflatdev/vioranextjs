@@ -17,7 +17,6 @@
     .h5,
     h6,
     .h6 {
-        color: var(--Text-primary);
         font-family: var(--font-main2);
         font-weight: 600;
     }
@@ -67,4 +66,41 @@
     .main-menu .navigation>li:hover>a {
         color: var(--White) !important;
     }
+}
+
+// Declared OUTSIDE `.niche-agriculturefarming { ... }` on purpose, and only
+// the ANCESTOR is wrapped in `:where()` (not the heading selectors
+// themselves — unlike the demo-construction.scss note this file otherwise
+// mirrors). Two contenders exist for heading color here, not one:
+//   - Bootstrap's own reset (`vendor/_bootstrap.scss`): `h1, h2, ... { color:
+//     var(--bs-heading-color) }` — specificity (0,0,1) on the bare tag. Since
+//     `--bs-heading-color` is never defined, that resolves to the inherited
+//     ancestor color, i.e. `.niche-agriculturefarming`'s own
+//     `color: var(--Text-secondary)` — the WRONG shade (verified: produced
+//     #474747 instead of the original theme's #0a0a0a on `h2.title`).
+//   - `.text_white` (`_reset.scss`), specificity (0,1,0), which legitimately
+//     needs to keep winning on dark sections (hero, banners).
+// Fully wrapping this rule in `:where()` (zero specificity, construction's
+// approach) loses to BOTH the tag form above (0,0,1) and `.text_white`
+// (0,1,0) — it only "works" there by accident, when nothing else overrides
+// heading color so the wrong Bootstrap fallback happens to look plausible.
+// Keeping the tag selectors (`h1`, `h2`, ...) unwrapped gives them
+// specificity (0,0,1): a dead tie with the Bootstrap tag rule, broken by
+// source order in our favor since this file loads after the global reset —
+// while still cleanly losing to any `text_white`/`text-white` class on the
+// same element. The `.h1`/`.h2`/... class forms stay at (0,1,0), likewise
+// tie-broken in our favor against Bootstrap's `.h1`-style reset variant.
+:where(.niche-agriculturefarming) h1,
+:where(.niche-agriculturefarming) .h1,
+:where(.niche-agriculturefarming) h2,
+:where(.niche-agriculturefarming) .h2,
+:where(.niche-agriculturefarming) h3,
+:where(.niche-agriculturefarming) .h3,
+:where(.niche-agriculturefarming) h4,
+:where(.niche-agriculturefarming) .h4,
+:where(.niche-agriculturefarming) h5,
+:where(.niche-agriculturefarming) .h5,
+:where(.niche-agriculturefarming) h6,
+:where(.niche-agriculturefarming) .h6 {
+    color: var(--Text-primary);
 }

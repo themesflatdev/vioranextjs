@@ -102,4 +102,3 @@ export const blogMenu: SimpleMenuItem[] = [
 ];
 
 export const contactHref = "/demo-spasalon/contact";
-export const viewAllDemosHref = "/landing#demos";

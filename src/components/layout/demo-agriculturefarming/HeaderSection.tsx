@@ -2,6 +2,8 @@
 
 import { useState, type ReactNode } from "react";
 import { useHeaderSticky } from "@/hooks/useHeaderSticky";
+import { useScrollSmoother } from "@/hooks/useScrollSmoother";
+import { useWow } from "@/hooks/useWow";
 import TopBar from "./TopBar";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -10,6 +12,8 @@ import MobileNav from "./MobileNav";
 export default function HeaderSection({ children }: { children: ReactNode }) {
   const isSticky = useHeaderSticky();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  useScrollSmoother();
+  useWow();
 
   return (
     <div className="niche-agriculturefarming">

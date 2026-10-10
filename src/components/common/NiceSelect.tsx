@@ -12,15 +12,20 @@ type NiceSelectProps = {
   value: string;
   onChange: (value: string) => void;
   className?: string;
+  // Initial label shown when `value` matches no option (e.g. "" before the
+  // user picks anything) — some theme forms (logistics book-move) show a
+  // label like "Choose Services" that isn't one of the real options.
+  placeholder?: string;
 };
 
 // Replaces the original jQuery "nice-select" plugin — keeps the same
 // .nice-select/.current/.list/.option/.selected markup so the theme's CSS
 // (open/close transition, selected highlight) keeps working unmodified.
-export default function NiceSelect({ options, value, onChange, className }: NiceSelectProps) {
+export default function NiceSelect({ options, value, onChange, className, placeholder }: NiceSelectProps) {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const selected = options.find((option) => option.value === value) ?? options[0];
+  const selected = options.find((option) => option.value === value) ?? (placeholder ? undefined : options[0]);
+  const currentLabel = selected ? selected.label : placeholder;
 
   useEffect(() => {
     if (!open) return;
@@ -40,7 +45,7 @@ export default function NiceSelect({ options, value, onChange, className }: Nice
       ref={wrapperRef}
       onClick={() => setOpen((v) => !v)}
     >
-      <span className="current">{selected?.label}</span>
+      <span className="current">{currentLabel}</span>
       <ul className="list">
         {options.map((option) => (
           <li
