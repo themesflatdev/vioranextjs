@@ -9,6 +9,7 @@ import TopBar from "./TopBar";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
+import ScrollToTop from "@/components/common/ScrollToTop";
 import HeroSection from "@/components/homes/demo-solarenergy/HeroSection";
 
 // This niche's original markup wraps `.shape` + the topbar + the *normal*
@@ -49,6 +50,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
       </div>
 
       <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+      <ScrollToTop />
     </div>
   );
 }

@@ -410,6 +410,30 @@
         margin-left: auto;
         margin-right: auto;
     }
+    // No Isotope here (see landing prompt) — its `fitRows` layout mode
+    // absolutely-positions `.item-fillter` in JS, which is what the shared
+    // `.fillters-wrap` rule (a plain non-wrapping flex row) relies on.
+    // Filtering is plain React state instead, so this needs real wrapping.
+    .fillters-wrap {
+        flex-wrap: wrap;
+        .item-fillter {
+            transition:
+                opacity 0.35s ease,
+                transform 0.35s ease,
+                width 0.35s ease,
+                margin-right 0.35s ease,
+                margin-bottom 0.35s ease;
+            &.is-hidden {
+                opacity: 0;
+                transform: scale(0.001);
+                width: 0 !important;
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+                overflow: hidden;
+                pointer-events: none;
+            }
+        }
+    }
 }
 
 .section-device-mobile {

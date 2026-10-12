@@ -5,6 +5,7 @@ import { useHeaderSticky } from "@/hooks/useHeaderSticky";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 export default function HeaderSection({ children }: { children: ReactNode }) {
   const isSticky = useHeaderSticky();
@@ -23,6 +24,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
       </div>
 
       <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+      <ScrollToTop />
     </div>
   );
 }

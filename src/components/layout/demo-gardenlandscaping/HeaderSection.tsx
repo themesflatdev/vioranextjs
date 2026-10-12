@@ -7,6 +7,7 @@ import { useWow } from "@/hooks/useWow";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 // The original HTML nests the non-fixed header INSIDE `.wrap-header-hero`
 // (between the hero's background thumb and `.hero-banner-13`), unlike every
@@ -44,6 +45,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
         </div>
 
         <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+        <ScrollToTop />
       </div>
     </OpenMobileNavContext.Provider>
   );

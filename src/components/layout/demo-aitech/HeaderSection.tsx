@@ -6,6 +6,7 @@ import { useWow } from "@/hooks/useWow";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 // aitech's original HTML has no #smooth-wrapper/#smooth-content — both
 // headers sit directly inside a plain `#wrapper` div, no GSAP ScrollSmoother
@@ -26,6 +27,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
         <Footer />
       </div>
       <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+      <ScrollToTop />
     </div>
   );
 }
