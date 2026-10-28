@@ -8,11 +8,11 @@ import Pagination from "@/components/common/Pagination";
 
 // blog-grid.html — 9 real items (lg-col-3), no sidebar, no excerpt. Links
 // already correctly used "blog-detail.html" in the source (no typo here,
-// unlike blog-list.html). Static "1 2 3" pagination wired to the real
-// usePagination hook, 6 posts/page (matches the lg-col-3 grid's 2-row
-// page size) — 9 posts gives 2 real pages.
+// unlike blog-list.html). The source's "1 2 3" pagination is decorative
+// (href="#", no page-2.html exists anywhere in the theme) — all 9 items
+// render on a single page there, so PAGE_SIZE must cover the full list.
 export default function BlogGridSection() {
-  const { currentPage, totalPages, currentItems, goToPage } = usePagination(blogGridPosts, 6);
+  const { currentPage, totalPages, currentItems, goToPage } = usePagination(blogGridPosts, blogGridPosts.length);
 
   return (
     <div className="blog-post-3 tf-spacing-1">

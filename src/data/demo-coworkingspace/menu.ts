@@ -64,21 +64,21 @@ export const mobileDemosFull: DemoLink[] = [
 export const pagesMenu: SimpleMenuItem[] = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Team", href: "/our-team" },
-  { label: "Team Detail", href: "/team-detail" },
+  { label: "Team Detail", href: "/team-detail/maria-torres" },
   { label: "Carrer", href: "/carrer" },
-  { label: "Carrer Detail", href: "/carrer-detail" },
+  { label: "Carrer Detail", href: "/carrer-detail/senior-product-manager" },
   { label: "FAQs", href: "/faqs" },
 ];
 
 export const servicesMenu: SimpleMenuItem[] = [
   { label: "Services", href: "/services" },
-  { label: "Services Detail", href: "/service-detail" },
+  { label: "Services Detail", href: "/service-detail/business-strategy" },
 ];
 
 // Right-half main-menu: Project / Blog / Contact.
 export const projectMenu: SimpleMenuItem[] = [
   { label: "Porfolio", href: "/portfolio" },
-  { label: "Portfolio Detail", href: "/portfolio-detail" },
+  { label: "Portfolio Detail", href: "/portfolio-detail/enterprise-identity-revamp-nexora-group" },
 ];
 
 export const blogMenu: SimpleMenuItem[] = [

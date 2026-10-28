@@ -1,8 +1,14 @@
+"use client";
+
+import useLazyVideo from "@/hooks/useLazyVideo";
+
 export default function BannerVideoSection() {
+  const { containerRef, shouldLoad } = useLazyVideo<HTMLDivElement>();
+
   return (
-    <div className="section-banner-10">
-      <video className="thumb thumbs-video" muted autoPlay loop playsInline>
-        <source src="/assets/video/video-solar.mp4" type="video/mp4" />
+    <div className="section-banner-10" ref={containerRef}>
+      <video className="thumb thumbs-video" muted autoPlay loop playsInline preload="none">
+        {shouldLoad && <source src="/assets/video/video-solar.mp4" type="video/mp4" />}
       </video>
       <div className="wrap-box">
         <div className="tf-container">

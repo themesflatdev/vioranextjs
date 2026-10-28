@@ -4,17 +4,23 @@ import { Plus_Jakarta_Sans, Bricolage_Grotesque, Red_Hat_Display, Rethink_Sans, 
 import "@/styles/app.scss";
 import DemoModalProvider from "@/components/common/DemoModalProvider";
 
+// All 7 families below are loaded as true VARIABLE fonts (no `weight`
+// array) to match the source theme's assets/font/fonts.css, which declares
+// each with a `font-weight: <min> <max>` RANGE backed by a single variable
+// woff2 — not one static file per weight. next/font/google defaults to the
+// variable axis when `weight` is omitted and the family supports it. Static
+// per-weight instances have different glyph metrics/hinting than the
+// variable instance at that same weight, which was shifting text line-wraps
+// (and therefore element heights) versus the source across many sections.
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-main",
   subsets: ["latin", "vietnamese"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
 });
 
 const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin", "vietnamese"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 // demo-insurance.scss's --font-main2/--font-main3/--font-main4 (headings
@@ -25,19 +31,16 @@ const bricolageGrotesque = Bricolage_Grotesque({
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-red-hat-display",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const rethinkSans = Rethink_Sans({
   variable: "--font-rethink-sans",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
 });
 
 // demo-saas.scss's --font-main2 ("Sora", applied via .font-2, e.g. FAQ
@@ -47,7 +50,6 @@ const manrope = Manrope({
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
 });
 
 // demo-healthcoach.scss's --font-main2 ("Instrument Sans", used by EVERY
@@ -55,7 +57,6 @@ const sora = Sora({
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {

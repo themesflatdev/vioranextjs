@@ -9,7 +9,10 @@ import { blogGridPosts, blogGridAuthor, blogGridDate } from "@/data/demo-spasalo
 import { blogGridTags } from "@/data/demo-spasalon/blogSidebar";
 import BlogSidebar from "./BlogSidebar";
 
-const PAGE_SIZE = 6;
+// bloggrid.html's own "1 2 3" pagination is decorative (href="#", no
+// page-2.html exists anywhere in the theme) — all 8 items render on a
+// single page there, so PAGE_SIZE must cover the full list.
+const PAGE_SIZE = blogGridPosts.length;
 
 // Same full-width pagination nesting as BlogListSection (see its own note).
 export default function BlogGridList() {

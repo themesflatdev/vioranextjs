@@ -9,7 +9,15 @@ function PortfolioCard({ item }: { item: CaseStudy }) {
   const href = `/portfolio-detail/${item.slug}`;
 
   return (
-    <div className="portfolio-item hover-image-2 cursor-wrapper">
+    // flex-basis pinned to the source's declared width ratio (435/965) —
+    // the row's ".img-style img" is `width:100%;height:100%`, so with an
+    // indeterminate flex-basis the browser falls back to each image's own
+    // *delivered* natural pixel size to size this flex item. next/image
+    // snaps each image to a different deviceSizes breakpoint (640 vs 1080),
+    // which happen to scale up from 435/965 by different factors, breaking
+    // the two-photo row's matched-height layout that the source's plain
+    // <img> (serving the untouched original file) got "for free".
+    <div className="portfolio-item hover-image-2 cursor-wrapper" style={{ flex: `${item.width} 1 0px` }}>
       <PortfolioCursorImage href={href} image={item.image} width={item.width} height={item.height} loading="eager" />
       <div className="content">
         <h4 className="title mb_10">

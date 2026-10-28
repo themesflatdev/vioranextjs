@@ -57,9 +57,9 @@ export default function FaqsAgencySection() {
   return (
     <div className="section-faqs-8 tf-spacing-1">
       <div className="tf-container">
-        <div className="wrap-faqs-item">
-          {faqGroups.map((group, index) => (
-            <div className="row" key={group.key}>
+        {faqGroups.map((group, index) => (
+          <div className="wrap-faqs-item" key={group.key}>
+            <div className="row">
               <div className="col-lg-5">
                 <div className="heading-section">
                   <h3 className="text_white mb_16" ref={titleRefs[index]}>
@@ -70,8 +70,8 @@ export default function FaqsAgencySection() {
               </div>
               <FaqGroupBlock group={group} />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
