@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { originalPosts } from "@/data/demo-corporate/blogPosts";
@@ -10,6 +11,16 @@ import RelatedPostsSlider from "@/components/othersPages/demo-corporate/RelatedP
 // are intentionally not included here.
 export function generateStaticParams() {
   return originalPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = originalPosts.find((p) => p.slug === slug);
+  return { title: post ? post.title : "Not Found" };
 }
 
 export default async function BlogDetailPage({

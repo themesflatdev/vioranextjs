@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { portfolioItems } from "@/data/demo-agency/portfolio";
@@ -7,6 +8,16 @@ import ContactTeaser3 from "@/components/othersPages/demo-agency/ContactTeaser3"
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ slug: item.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = portfolioItems.find((p) => p.slug === slug);
+  return { title: item ? item.title : "Not Found" };
 }
 
 export default async function AgencyPortfolioDetailPage({

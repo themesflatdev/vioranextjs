@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { services } from "@/data/demo-corporate/services";
 import ServiceDetailHero from "@/components/othersPages/demo-corporate/ServiceDetailHero";
@@ -9,6 +10,16 @@ import PartnerMarquee from "@/components/othersPages/demo-corporate/PartnerMarqu
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
+  return { title: service ? service.title : "Not Found" };
 }
 
 export default async function ServiceDetailPage({

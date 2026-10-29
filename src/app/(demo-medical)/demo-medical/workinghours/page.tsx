@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import PageHeaderBanner from "@/components/othersPages/demo-medical/PageHeaderBanner";
 import WorkingHoursSection from "@/components/othersPages/demo-medical/WorkingHoursSection";
 import BookAppointmentSection from "@/components/homes/demo-medical/BookAppointmentSection";
 import BannerSection from "@/components/homes/demo-medical/BannerSection";
+
+export const metadata: Metadata = {
+  title: "Working Hours",
+  description: "View our clinic's working hours and availability.",
+};
 
 export default function WorkingHoursPage() {
   return (

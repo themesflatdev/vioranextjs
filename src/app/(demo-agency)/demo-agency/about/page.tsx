@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import PageTitleBreadcrumb from "@/components/othersPages/demo-agency/PageTitleBreadcrumb";
 import AboutAgencyHero from "@/components/othersPages/demo-agency/AboutAgencyHero";
 import ShowcaseGallery from "@/components/common/ShowcaseGallery";
 import AboutTeamPreview from "@/components/othersPages/demo-agency/AboutTeamPreview";
 import ServicesNumbered from "@/components/homes/demo-agency/ServicesNumbered";
 import ResumeSection from "@/components/homes/demo-agency/ResumeSection";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn the story and mission behind a creative digital agency specializing in branding, web design and marketing.",
+};
 
 export default function AgencyAboutPage() {
   return (

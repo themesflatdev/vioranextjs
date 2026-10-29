@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import BlogWithSidebarClient from "@/components/othersPages/demo-corporate/BlogWithSidebarClient";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Latest news, articles and insights from a corporate consulting firm delivering business strategy and professional services.",
+};
 
 export default function BlogWithSidebarPage() {
   return (

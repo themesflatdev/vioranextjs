@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageTitleBreadcrumb from "@/components/othersPages/demo-insurance/PageTitleBreadcrumb";
 import TeamDetailBody from "@/components/othersPages/demo-insurance/TeamDetailBody";
@@ -6,6 +7,16 @@ import { teamMembers } from "@/data/demo-insurance/teamMembers";
 
 export function generateStaticParams() {
   return teamMembers.map((member) => ({ slug: member.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const member = teamMembers.find((m) => m.slug === slug);
+  return { title: member ? member.name : "Not Found" };
 }
 
 // Breadcrumb/title literally say "Our Team" in the source HTML (a

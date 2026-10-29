@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import BlogFullWidthClient from "@/components/othersPages/demo-corporate/BlogFullWidthClient";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Latest news, articles and insights from a corporate consulting firm delivering business strategy and professional services.",
+};
 
 export default function BlogFullWidthPage() {
   return (

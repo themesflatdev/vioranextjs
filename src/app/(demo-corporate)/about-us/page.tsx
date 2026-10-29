@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutUsHero from "@/components/othersPages/demo-corporate/AboutUsHero";
 import AboutVideoSection from "@/components/othersPages/demo-corporate/AboutVideoSection";
 import WhyChooseSection from "@/components/othersPages/demo-corporate/WhyChooseSection";
@@ -7,6 +8,11 @@ import ResumeSection from "@/components/othersPages/demo-corporate/ResumeSection
 import TeamGridSection from "@/components/othersPages/demo-corporate/TeamGridSection";
 import PartnerMarquee from "@/components/othersPages/demo-corporate/PartnerMarquee";
 import { teamMembers } from "@/data/demo-corporate/teamMembers";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn the story and mission behind a corporate consulting firm delivering business strategy and professional services.",
+};
 
 export default function AboutUsPage() {
   return (

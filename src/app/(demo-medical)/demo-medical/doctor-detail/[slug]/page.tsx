@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHeaderBanner from "@/components/othersPages/demo-medical/PageHeaderBanner";
 import DoctorDetailsSection from "@/components/othersPages/demo-medical/DoctorDetailsSection";
@@ -7,6 +8,16 @@ import { doctorsAll } from "@/data/demo-medical/doctors";
 
 export function generateStaticParams() {
   return doctorsAll.map((doctor) => ({ slug: doctor.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const doctor = doctorsAll.find((item) => item.slug === slug);
+  return { title: doctor ? doctor.name : "Not Found" };
 }
 
 export default async function DoctorDetailPage({ params }: { params: Promise<{ slug: string }> }) {

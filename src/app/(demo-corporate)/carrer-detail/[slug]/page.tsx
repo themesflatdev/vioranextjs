@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { jobs } from "@/data/demo-corporate/jobs";
 import CarrerDetailBody from "@/components/othersPages/demo-corporate/CarrerDetailBody";
@@ -5,6 +6,16 @@ import CtaSection5 from "@/components/othersPages/demo-corporate/CtaSection5";
 
 export function generateStaticParams() {
   return jobs.map((job) => ({ slug: job.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const job = jobs.find((j) => j.slug === slug);
+  return { title: job ? job.title : "Not Found" };
 }
 
 export default async function CarrerDetailPage({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { teamMembers } from "@/data/demo-agency/teamMembers";
 import PageTitleBreadcrumb from "@/components/othersPages/demo-agency/PageTitleBreadcrumb";
@@ -6,6 +7,16 @@ import ContactTeaser3 from "@/components/othersPages/demo-agency/ContactTeaser3"
 
 export function generateStaticParams() {
   return teamMembers.map((member) => ({ slug: member.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const member = teamMembers.find((m) => m.slug === slug);
+  return { title: member ? member.name : "Not Found" };
 }
 
 export default async function AgencyTeamDetailPage({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageHeaderSpa from "@/components/othersPages/demo-spasalon/PageHeaderSpa";
 import BlogDetailBody from "@/components/othersPages/demo-spasalon/BlogDetailBody";
@@ -5,6 +6,16 @@ import { allBlogDetailSlugs, resolveBlogDetailMeta } from "@/data/demo-spasalon/
 
 export function generateStaticParams() {
   return allBlogDetailSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const meta = resolveBlogDetailMeta(slug);
+  return { title: meta ? meta.title : "Not Found" };
 }
 
 export default async function SpasalonBlogDetailPage({

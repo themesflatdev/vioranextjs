@@ -7,6 +7,12 @@ import TestimonialSection from "@/components/homes/demo-corporate/TestimonialSec
 import InsightsSection from "@/components/homes/demo-corporate/InsightsSection";
 import NewsletterSection from "@/components/homes/demo-corporate/NewsletterSection";
 
+// No page-level metadata here on purpose: this page.tsx sits in the exact
+// same route segment as (demo-corporate)/layout.tsx (route "/"), and
+// Next.js does not apply a layout's title.template to a title set by a
+// page.tsx in that same segment (only to nested child segments) — so this
+// relies on the layout's `title.default`/`description`, which already say
+// exactly "Corporate - Viora" / the same business sentence.
 export default function CorporateHome() {
   return (
     <>

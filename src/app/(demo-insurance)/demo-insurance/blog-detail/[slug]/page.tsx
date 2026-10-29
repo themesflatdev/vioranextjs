@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageTitleBreadcrumb from "@/components/othersPages/demo-insurance/PageTitleBreadcrumb";
 import BlogDetailFixedSocial from "@/components/othersPages/demo-insurance/BlogDetailFixedSocial";
@@ -9,6 +10,16 @@ import { blogPosts } from "@/data/demo-insurance/blogPosts";
 // back to one of these 5, see blogGridPosts.ts).
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  return { title: post ? post.title : "Not Found" };
 }
 
 export default async function BlogDetailPage({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import PageHeaderSpa from "@/components/othersPages/demo-spasalon/PageHeaderSpa";
 import AboutSection from "@/components/homes/demo-spasalon/AboutSection";
 import GallerySection from "@/components/homes/demo-spasalon/GallerySection";
@@ -6,6 +7,11 @@ import TeamGridSection from "@/components/othersPages/demo-spasalon/TeamGridSect
 import LookbookSection from "@/components/othersPages/demo-spasalon/LookbookSection";
 import BookingSection from "@/components/homes/demo-spasalon/BookingSection";
 import { teamMembers } from "@/data/demo-spasalon/teamMembers";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn the story and mission behind a spa and salon offering massage, skincare and wellness treatments.",
+};
 
 export default function SpasalonAboutPage() {
   return (

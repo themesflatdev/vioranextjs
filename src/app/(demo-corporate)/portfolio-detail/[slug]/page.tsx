@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { portfolioItems } from "@/data/demo-corporate/portfolio";
 import PortfolioDetailHero from "@/components/othersPages/demo-corporate/PortfolioDetailHero";
@@ -7,6 +8,16 @@ import PartnerMarquee from "@/components/othersPages/demo-corporate/PartnerMarqu
 
 export function generateStaticParams() {
   return portfolioItems.map((item) => ({ slug: item.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const item = portfolioItems.find((p) => p.slug === slug);
+  return { title: item ? item.title : "Not Found" };
 }
 
 export default async function PortfolioDetailPage({

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import PageHeaderSpa from "@/components/othersPages/demo-spasalon/PageHeaderSpa";
 import SpaExperienceSection from "@/components/homes/demo-spasalon/SpaExperienceSection";
 import ServicesSection from "@/components/homes/demo-spasalon/ServicesSection";
 import BookingSection from "@/components/homes/demo-spasalon/BookingSection";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Explore the full range of services offered by a spa and salon offering massage, skincare and wellness treatments.",
+};
 
 // Source HTML's breadcrumb/h2 differ in case ("our Services" vs. "Our
 // Services") — a real content quirk, preserved verbatim per CLAUDE.md rule 4.

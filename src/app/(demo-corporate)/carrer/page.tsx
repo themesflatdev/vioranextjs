@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import CarrerSection from "@/components/othersPages/demo-corporate/CarrerSection";
 import ShowcaseGallery from "@/components/common/ShowcaseGallery";
 import CtaSection5 from "@/components/othersPages/demo-corporate/CtaSection5";
 import PartnerMarquee from "@/components/othersPages/demo-corporate/PartnerMarquee";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description: "Explore career opportunities and open positions at a corporate consulting firm delivering business strategy and professional services.",
+};
 
 export default function CarrerPage() {
   return (

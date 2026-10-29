@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import PageTitleBreadcrumb from "@/components/othersPages/demo-agency/PageTitleBreadcrumb";
 import ShowcaseGallery from "@/components/common/ShowcaseGallery";
 import ContactTeaser3 from "@/components/othersPages/demo-agency/ContactTeaser3";
 import ContactMapSection from "@/components/othersPages/demo-agency/ContactMapSection";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with a creative digital agency specializing in branding, web design and marketing for inquiries, support or to start a project.",
+};
 
 export default function AgencyContactPage() {
   return (
