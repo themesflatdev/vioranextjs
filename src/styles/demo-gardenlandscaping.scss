@@ -1,7 +1,7 @@
 .niche-gardenlandscaping {
     --Primary: #19AA3B;
     --font-main: "Plus Jakarta Sans", sans-serif;
-    --font-main2: "Sora", sans-serif;
+    --font-main2: var(--font-sora), sans-serif;
     color: var(--Text-muted);
 
     #wrapper {

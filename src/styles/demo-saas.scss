@@ -1,7 +1,7 @@
 .niche-saas {
     --Primary: #4E49E7;
     --font-main: "Plus Jakarta Sans", sans-serif;
-    --font-main2: "Sora", sans-serif;
+    --font-main2: var(--font-sora), sans-serif;
     --font-main3: "Manrope", sans-serif;
     color: var(--Text-muted);
 

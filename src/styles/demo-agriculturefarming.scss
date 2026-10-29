@@ -2,7 +2,7 @@
     --Primary: #3C6B1A;
     --Secondary: #8FBF2C;
     --font-main: "Plus Jakarta Sans", sans-serif;
-    --font-main2: "Sora", sans-serif;
+    --font-main2: var(--font-sora), sans-serif;
     color: var(--Text-secondary);
 
     h1,

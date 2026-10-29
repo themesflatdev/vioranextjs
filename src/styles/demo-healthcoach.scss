@@ -2,7 +2,7 @@
     --Primary: #10483D;
     --Secondary: #C3EFE6;
     --font-main: "Plus Jakarta Sans", sans-serif;
-    --font-main2: "Instrument Sans", sans-serif;
+    --font-main2: var(--font-instrument-sans), sans-serif;
     color: var(--Text-secondary);
 
     .smooth-wrapper-healthcoach {

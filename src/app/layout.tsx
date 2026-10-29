@@ -1,62 +1,27 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Plus_Jakarta_Sans, Bricolage_Grotesque, Red_Hat_Display, Rethink_Sans, Manrope, Sora, Instrument_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "@/styles/app.scss";
 import DemoModalProvider from "@/components/common/DemoModalProvider";
 
-// All 7 families below are loaded as true VARIABLE fonts (no `weight`
-// array) to match the source theme's assets/font/fonts.css, which declares
-// each with a `font-weight: <min> <max>` RANGE backed by a single variable
-// woff2 — not one static file per weight. next/font/google defaults to the
-// variable axis when `weight` is omitted and the family supports it. Static
+// Loaded as a true VARIABLE font (no `weight` array) to match the source
+// theme's assets/font/fonts.css, which declares it with a
+// `font-weight: <min> <max>` RANGE backed by a single variable woff2 — not
+// one static file per weight. next/font/google defaults to the variable
+// axis when `weight` is omitted and the family supports it. Static
 // per-weight instances have different glyph metrics/hinting than the
 // variable instance at that same weight, which was shifting text line-wraps
 // (and therefore element heights) versus the source across many sections.
+//
+// This is the ONLY font loaded globally — it backs every niche's shared
+// --font-main (body text everywhere). Every other family is niche-specific
+// (only a handful of niches actually reference it via font-main2/3/4) and
+// is loaded in that niche's own layout.tsx instead, so pages that don't
+// need it don't pay for it.
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-main",
   subsets: ["latin", "vietnamese"],
   style: ["normal", "italic"],
-});
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin", "vietnamese"],
-});
-
-// demo-insurance.scss's --font-main2/--font-main3/--font-main4 (headings
-// use font-main2 at weight 600) — these were referenced by name in the
-// niche SCSS but never actually loaded as web fonts anywhere, so browsers
-// silently fell back to generic sans-serif instead of the theme's real
-// typefaces.
-const redHatDisplay = Red_Hat_Display({
-  variable: "--font-red-hat-display",
-  subsets: ["latin", "latin-ext"],
-});
-
-const rethinkSans = Rethink_Sans({
-  variable: "--font-rethink-sans",
-  subsets: ["latin", "latin-ext"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin", "vietnamese"],
-});
-
-// demo-saas.scss's --font-main2 ("Sora", applied via .font-2, e.g. FAQ
-// heading/accordion titles) referenced this family by literal name but it
-// was never actually loaded anywhere — same gap already fixed once for
-// Red Hat Display/Rethink Sans above.
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin", "latin-ext"],
-});
-
-// demo-healthcoach.scss's --font-main2 ("Instrument Sans", used by EVERY
-// h1-h6 at weight 500, not just an opt-in class) — same never-loaded gap.
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -67,10 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${plusJakartaSans.variable} ${bricolageGrotesque.variable} ${redHatDisplay.variable} ${rethinkSans.variable} ${manrope.variable} ${sora.variable} ${instrumentSans.variable}`}
-    >
+    <html lang="en" className={plusJakartaSans.variable}>
       <body>
         <DemoModalProvider>{children}</DemoModalProvider>
         <Script src="/assets/js/wow.min.js" strategy="afterInteractive" />

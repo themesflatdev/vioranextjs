@@ -1,7 +1,7 @@
 .niche-carservices {
     --Primary: #F44649;
     --font-main: "Plus Jakarta Sans", sans-serif;
-    --font-main2: "Instrument Sans", sans-serif;
+    --font-main2: var(--font-instrument-sans), sans-serif;
     color: var(--Text-muted);
 
     .smooth-wrapper-carservices {
