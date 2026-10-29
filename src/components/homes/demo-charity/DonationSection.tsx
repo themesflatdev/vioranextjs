@@ -42,7 +42,7 @@ function ViewProgramButton() {
 }
 
 export default function DonationSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
 
   const [card1, card2, card3] = donationCards;
@@ -81,7 +81,7 @@ export default function DonationSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             768: { slidesPerView: 2, spaceBetween: 20 },

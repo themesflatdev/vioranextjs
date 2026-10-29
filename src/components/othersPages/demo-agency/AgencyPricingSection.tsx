@@ -15,7 +15,7 @@ import { pricingPlans, pricingFeatures } from "@/data/demo-agency/pricingPlans";
 export default function AgencyPricingSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-pricing-8 sw-layout tf-spacing-1">
@@ -44,7 +44,7 @@ export default function AgencyPricingSection() {
           slidesPerView={1}
           spaceBetween={15}
           speed={1000}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

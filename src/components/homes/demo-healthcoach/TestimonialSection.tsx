@@ -16,7 +16,7 @@ export default function TestimonialSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-container w-1840">
@@ -51,8 +51,8 @@ export default function TestimonialSection() {
               speed={1000}
               observer
               loop
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-              pagination={{ el: dotsRef.current, clickable: true }}
+              navigation={{ prevEl, nextEl }}
+              pagination={{ el: dotsEl, clickable: true }}
               modules={[Navigation, Pagination]}
               onSwiper={onSwiper}
               breakpoints={{

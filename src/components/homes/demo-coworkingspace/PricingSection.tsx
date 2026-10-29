@@ -84,7 +84,7 @@ function PricingCard({ plan, period }: { plan: PricingPlan; period: PricingPerio
 // 992-1199 2 slide space 112, >=1200 3 slide space 112.
 export default function PricingSection() {
   const { period, setPeriod, tabSlideRef } = usePricingTab();
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-pricing-7 flat-animate-tab tf-spacing-1 pt-0 pricing-container">
@@ -137,7 +137,7 @@ export default function PricingSection() {
             spaceBetween={15}
             speed={1000}
             observer
-            pagination={{ el: dotsRef.current, clickable: true }}
+            pagination={{ el: dotsEl, clickable: true }}
             modules={[Pagination]}
             onSwiper={onSwiper}
             breakpoints={{

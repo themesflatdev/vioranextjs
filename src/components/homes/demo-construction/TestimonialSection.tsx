@@ -40,13 +40,17 @@ const testimonials: Testimonial[] = [
 // Mirrors assets/js/carousel.js `.flat-thumbs-tes` — two Swiper instances
 // cross-linked via the Controller module (slide thumbs <-> fade main).
 export default function TestimonialSection() {
-  const { prevRef, nextRef, dotsRef, onSwiper: onMainSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper: onMainSwiper } = useSwiperControls();
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [thumbSwiper, setThumbSwiper] = useState<SwiperType | null>(null);
 
   useEffect(() => {
     if (!mainSwiper || !thumbSwiper) return;
+    // Swiper's Controller module only cross-links instances by mutating
+    // `.controller.control` directly — no setter-based API exists.
+    // eslint-disable-next-line react-hooks/immutability
     mainSwiper.controller.control = thumbSwiper;
+    // eslint-disable-next-line react-hooks/immutability
     thumbSwiper.controller.control = mainSwiper;
   }, [mainSwiper, thumbSwiper]);
 
@@ -86,8 +90,8 @@ export default function TestimonialSection() {
             speed={800}
             spaceBetween={0}
             breakpoints={{ 768: { spaceBetween: 10 } }}
-            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-            pagination={{ el: dotsRef.current, clickable: true }}
+            navigation={{ prevEl, nextEl }}
+            pagination={{ el: dotsEl, clickable: true }}
             onSwiper={(swiper) => {
               setMainSwiper(swiper);
               onMainSwiper(swiper);

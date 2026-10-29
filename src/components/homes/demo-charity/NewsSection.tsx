@@ -45,7 +45,7 @@ function NewsItem({ item, wowDelay }: { item: (typeof newsItems)[number]; wowDel
 }
 
 export default function NewsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
 
   return (
@@ -69,7 +69,7 @@ export default function NewsSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

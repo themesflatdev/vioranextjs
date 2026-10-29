@@ -14,7 +14,7 @@ import { useSwiperControls } from "@/hooks/useSwiperControls";
 // (tablet), 3 from 992px (preview), 4 from 1200px (screen-xl); spaceBetween
 // 15 by default, 20 from 768px up.
 export default function InsightsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
 
@@ -30,7 +30,7 @@ export default function InsightsSection() {
         slidesPerView={1}
         spaceBetween={15}
         speed={1000}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
         breakpoints={{
           575: { slidesPerView: 2, spaceBetween: 15 },

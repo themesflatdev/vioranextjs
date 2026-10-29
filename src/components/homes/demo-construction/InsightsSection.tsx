@@ -50,7 +50,7 @@ const posts: BlogPost[] = [
 export default function InsightsSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("left");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-insights-4 sw-layout tf-spacing-1">
@@ -69,7 +69,7 @@ export default function InsightsSection() {
           speed={1000}
           slidesPerView={1}
           spaceBetween={15}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 20 },

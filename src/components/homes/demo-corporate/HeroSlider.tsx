@@ -16,7 +16,7 @@ const slides = [
 ];
 
 export default function HeroSlider() {
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-slider-1 sw-layout">
@@ -28,8 +28,8 @@ export default function HeroSlider() {
         speed={1000}
         loop={false}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        navigation={{ prevEl, nextEl }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
       >
         {slides.map((slide, index) => (

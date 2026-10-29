@@ -77,7 +77,7 @@ function PricingCard({ plan, period }: { plan: PricingPlan; period: PricingPerio
 // data-mobile-sm is absent so the 575 breakpoint falls back to mobile=1.
 export default function PricingSection() {
   const { period, setPeriod, tabSlideRef } = usePricingTab();
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
 
   return (
@@ -134,7 +134,7 @@ export default function PricingSection() {
             slidesPerView={1}
             spaceBetween={15}
             speed={1000}
-            pagination={{ el: dotsRef.current, clickable: true }}
+            pagination={{ el: dotsEl, clickable: true }}
             onSwiper={onSwiper}
             breakpoints={{
               575: { slidesPerView: 1, spaceBetween: 15 },

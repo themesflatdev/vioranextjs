@@ -19,6 +19,9 @@ type VideoModalProps = {
 // itself to <body> instead of rendering in place).
 export default function VideoModal({ youtubeId, open, onClose }: VideoModalProps) {
   const [mounted, setMounted] = useState(false);
+  // Hydration-safe mount flag (createPortal needs document.body, unavailable
+  // during SSR) — runs once, not derivable from props.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   if (!open || !mounted) return null;

@@ -26,7 +26,7 @@ type TestimonialSectionProps = {
 // (assets/js/carousel.js `.flat-thumbs-tes`): two Swiper instances cross-linked
 // via the Controller module so scrolling either one moves the other in lock-step.
 export default function TestimonialSection({ variant = "light" }: TestimonialSectionProps) {
-  const { prevRef, nextRef, onSwiper: onMainSwiper } = useSwiperControls();
+  const { prevRef, nextRef, prevEl, nextEl, onSwiper: onMainSwiper } = useSwiperControls();
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [thumbSwiper, setThumbSwiper] = useState<SwiperType | null>(null);
   const textColorClass = variant === "light" ? "text_primary" : "text_white";
@@ -36,7 +36,11 @@ export default function TestimonialSection({ variant = "light" }: TestimonialSec
 
   useEffect(() => {
     if (!mainSwiper || !thumbSwiper) return;
+    // Swiper's Controller module only cross-links instances by mutating
+    // `.controller.control` directly — no setter-based API exists.
+    // eslint-disable-next-line react-hooks/immutability
     mainSwiper.controller.control = thumbSwiper;
+    // eslint-disable-next-line react-hooks/immutability
     thumbSwiper.controller.control = mainSwiper;
   }, [mainSwiper, thumbSwiper]);
 
@@ -56,7 +60,7 @@ export default function TestimonialSection({ variant = "light" }: TestimonialSec
                   speed={800}
                   spaceBetween={0}
                   breakpoints={{ 768: { spaceBetween: 10 } }}
-                  navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+                  navigation={{ prevEl, nextEl }}
                   onSwiper={(swiper) => {
                     setMainSwiper(swiper);
                     onMainSwiper(swiper);

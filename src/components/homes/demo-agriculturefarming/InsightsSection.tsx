@@ -15,7 +15,7 @@ const posts = [
 
 export default function InsightsSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-insight-7 sw-layout tf-spacing-1">
@@ -37,7 +37,7 @@ export default function InsightsSection() {
           speed={1000}
           spaceBetween={15}
           slidesPerView={1}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

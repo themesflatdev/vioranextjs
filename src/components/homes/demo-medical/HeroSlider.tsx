@@ -44,7 +44,7 @@ function SlideContent() {
 }
 
 export default function HeroSlider() {
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-slider-2 position-relative sw-layout">
@@ -56,8 +56,8 @@ export default function HeroSlider() {
         speed={1000}
         slidesPerView={1}
         loop={false}
-        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        navigation={{ prevEl, nextEl }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
       >
         <SwiperSlide>

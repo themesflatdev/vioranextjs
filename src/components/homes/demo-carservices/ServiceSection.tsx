@@ -30,7 +30,7 @@ const services = [
 
 export default function ServiceSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-service-13 sw-layout">
@@ -47,7 +47,7 @@ export default function ServiceSection() {
         modules={[Pagination]}
         speed={1000}
         loop={false}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
         slidesPerView={1}
         spaceBetween={15}

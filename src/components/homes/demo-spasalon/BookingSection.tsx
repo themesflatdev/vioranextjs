@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useSplitTextReveal } from "@/hooks/useSplitTextReveal";
 import { useScrollTransform } from "@/hooks/useScrollTransform";
 
@@ -36,13 +37,17 @@ export default function BookingSection({ py0 = false }: { py0?: boolean }) {
                   complete our quick online form we&rsquo;ll get back to you soon.
                 </p>
               </div>
-              <a href="/demo-spasalon/booking" className="tf-btn btn-switch-text mx-auto wow fadeInUp" data-wow-delay="0.6s">
+              <Link
+                href="/demo-spasalon/booking"
+                className="tf-btn btn-switch-text mx-auto wow fadeInUp"
+                data-wow-delay="0.6s"
+              >
                 <span>
                   <span className="btn-double-text" data-text="Schedule Your Appointment">
                     Schedule Your Appointment
                   </span>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-5">

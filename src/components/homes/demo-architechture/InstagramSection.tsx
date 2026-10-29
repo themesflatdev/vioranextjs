@@ -11,7 +11,7 @@ const images = ["instagram-1.jpg", "instagram-2.jpg", "instagram-3.jpg", "instag
 // data-preview=4 data-tablet=3 data-mobile-sm=2 data-mobile=1, space 10 mọi mốc.
 export default function InstagramSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="setion-instagrams-2 sw-layout">
@@ -23,7 +23,7 @@ export default function InstagramSection() {
         slidesPerView={1}
         spaceBetween={10}
         observer
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         modules={[Pagination]}
         onSwiper={onSwiper}
         breakpoints={{

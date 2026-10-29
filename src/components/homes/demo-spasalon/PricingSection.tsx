@@ -14,7 +14,7 @@ export default function PricingSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-pricing-5 tf-spacing-14 sw-layout">
@@ -38,7 +38,7 @@ export default function PricingSection() {
           spaceBetween={15}
           speed={1000}
           observer
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           modules={[Pagination]}
           onSwiper={onSwiper}
           breakpoints={{

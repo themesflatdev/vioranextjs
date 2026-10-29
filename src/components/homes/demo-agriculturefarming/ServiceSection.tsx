@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import { useSplitTextReveal } from "@/hooks/useSplitTextReveal";
-import { useSwiperControls } from "@/hooks/useSwiperControls";
 
 const services = [
   { image: "service-1.jpg", title: "Organic Farming", delay: ".0s" },
@@ -16,7 +14,6 @@ const services = [
 
 export default function ServiceSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
-  const { dotsRef, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-service-15 sw-layout">
@@ -49,12 +46,9 @@ export default function ServiceSection() {
         </div>
         <Swiper
           className="swiper"
-          modules={[Pagination]}
           speed={1000}
           spaceBetween={15}
           slidesPerView={1}
-          pagination={{ el: dotsRef.current, clickable: true }}
-          onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },
             768: { slidesPerView: 2, spaceBetween: 20 },

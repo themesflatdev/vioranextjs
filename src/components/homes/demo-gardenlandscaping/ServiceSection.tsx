@@ -9,7 +9,7 @@ import { useSplitTextReveal } from "@/hooks/useSplitTextReveal";
 import { serviceItems } from "@/data/demo-gardenlandscaping/home";
 
 export default function ServiceSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
 
@@ -33,7 +33,7 @@ export default function ServiceSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

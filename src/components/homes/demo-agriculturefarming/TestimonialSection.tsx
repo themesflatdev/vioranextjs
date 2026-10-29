@@ -30,7 +30,7 @@ const testimonials = [
 
 export default function TestimonialSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
-  const { prevRef, nextRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, prevEl, nextEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-16 sw-layout tf-spacing-1">
@@ -73,7 +73,7 @@ export default function TestimonialSection() {
               effect="fade"
               fadeEffect={{ crossFade: true }}
               speed={1000}
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+              navigation={{ prevEl, nextEl }}
               onSwiper={onSwiper}
             >
               {testimonials.map((t) => (

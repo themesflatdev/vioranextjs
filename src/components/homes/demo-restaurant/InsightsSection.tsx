@@ -13,7 +13,7 @@ import { originalPosts } from "@/data/demo-corporate/blogPosts";
 const DEMO_DETAIL_HREF = `/blog-detail/${originalPosts[0].slug}`;
 
 export default function InsightsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
   const itemRef = useScrollTransform<HTMLDivElement>({ direction: "left", distance: "10%" });
   const leafRef = useScrollTransform<HTMLDivElement>({ direction: "up", distance: "20%" });
@@ -35,7 +35,7 @@ export default function InsightsSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

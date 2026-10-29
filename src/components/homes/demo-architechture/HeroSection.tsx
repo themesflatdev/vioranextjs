@@ -25,7 +25,7 @@ function HeroContent() {
 }
 
 export default function HeroSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-slider-8 sw-layout effect-content-slide">
@@ -35,7 +35,7 @@ export default function HeroSection() {
         effect="fade"
         fadeEffect={{ crossFade: true }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
       >
         {slides.map((slide, index) => (

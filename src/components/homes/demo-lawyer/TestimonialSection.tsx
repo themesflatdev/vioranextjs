@@ -16,7 +16,7 @@ import { testimonials } from "@/data/demo-lawyer/testimonials";
 export default function TestimonialSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
-  const { prevRef, nextRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, prevEl, nextEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-17 sw-layout">
@@ -61,7 +61,7 @@ export default function TestimonialSection() {
               fadeEffect={{ crossFade: true }}
               loop={false}
               autoplay={false}
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+              navigation={{ prevEl, nextEl }}
               onSwiper={onSwiper}
             >
               {testimonials.map((item) => (

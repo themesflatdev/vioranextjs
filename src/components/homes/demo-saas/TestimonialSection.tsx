@@ -16,7 +16,7 @@ import { testimonials } from "@/data/demo-saas/testimonials";
 export default function TestimonialSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
   const blockRef = useRevealElements<HTMLDivElement>();
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-7 tf-spacing-1 sw-layout">
@@ -35,7 +35,7 @@ export default function TestimonialSection() {
           spaceBetween={15}
           speed={1000}
           observer
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           modules={[Pagination]}
           onSwiper={onSwiper}
           breakpoints={{

@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored third-party OGL bundle, kept byte-for-byte identical to
+    // viora/assets/js/distortion-img-depend.js — not our code to lint.
+    "src/lib/ogl/distortion-img-depend.js",
+    "src/lib/ogl/distortion-img-depend.d.ts",
   ]),
 ]);
 

@@ -8,6 +8,9 @@ export function useMediaQuery(query: string) {
 
   useEffect(() => {
     const mql = window.matchMedia(query);
+    // window.matchMedia is a browser-only API, unavailable during SSR/render
+    // — the initial value can only be read here, not derived from props.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMatches(mql.matches);
     const listener = (e: MediaQueryListEvent) => setMatches(e.matches);
     mql.addEventListener("change", listener);

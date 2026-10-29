@@ -49,7 +49,6 @@ export default function LookbookSection() {
                 <div className={`lookbook-item ${pin.position}`} key={pin.id}>
                   <div className={`dropdown dropup-center dropdown-custom dropup${isOpen ? " show" : ""}`}>
                     <div
-                      role="dialog"
                       className="tf-pin-btn bundle-pin-item"
                       id={`pin${pin.id}`}
                       aria-expanded={isOpen}

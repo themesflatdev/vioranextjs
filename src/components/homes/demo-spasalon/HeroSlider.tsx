@@ -23,7 +23,7 @@ const marqueeItems = [
 ];
 
 export default function HeroSlider() {
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
   const marqueeRef = useInfiniteSlide<HTMLDivElement>({ direction: "left" });
 
   return (
@@ -36,8 +36,8 @@ export default function HeroSlider() {
         speed={1000}
         loop={false}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        navigation={{ prevEl, nextEl }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
       >
         {slides.map((slide, index) => (

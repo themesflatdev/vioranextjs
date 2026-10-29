@@ -15,7 +15,7 @@ import { instaPosts } from "@/data/demo-healthcoach/instaPosts";
 export default function InstagramSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-container w-1840 tf-spacing-1 pb-0 sw-layout">
@@ -35,7 +35,7 @@ export default function InstagramSection() {
             spaceBetween={15}
             speed={1000}
             observer
-            pagination={{ el: dotsRef.current, clickable: true }}
+            pagination={{ el: dotsEl, clickable: true }}
             modules={[Pagination]}
             onSwiper={onSwiper}
             breakpoints={{

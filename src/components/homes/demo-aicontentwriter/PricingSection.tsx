@@ -65,7 +65,7 @@ function PricingCard({ plan, period }: { plan: PricingPlan; period: PricingPerio
 
 export default function PricingSection() {
   const { period, setPeriod, tabSlideRef } = usePricingTab();
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
@@ -124,7 +124,7 @@ export default function PricingSection() {
             observeParents
             slidesPerView={1}
             spaceBetween={15}
-            pagination={{ el: dotsRef.current, clickable: true }}
+            pagination={{ el: dotsEl, clickable: true }}
             onSwiper={onSwiper}
             breakpoints={{
               768: { slidesPerView: 2, spaceBetween: 20 },

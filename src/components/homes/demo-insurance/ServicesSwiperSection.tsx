@@ -25,7 +25,7 @@ const services = [
 // 768=tablet(3), 992=preview(3), 1200=screenXl(4) — spaceBetween stays 10
 // throughout since data-space/-md/-lg are all "10" in the source markup.
 export default function ServicesSwiperSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
 
@@ -58,7 +58,7 @@ export default function ServicesSwiperSection() {
           slidesPerView={1}
           spaceBetween={10}
           speed={1000}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           modules={[Pagination]}
           onSwiper={onSwiper}
           breakpoints={{

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import DemoModal from "./DemoModal";
 
@@ -21,14 +21,17 @@ export function useDemoModal() {
 export default function DemoModalProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
   // Safety net: if navigation to a demo happens through any path other than
   // the explicit onClick close handler, the route change itself closes the
   // popup so it never stays open (and the body never stays scroll-locked)
-  // on the new page.
-  useEffect(() => {
+  // on the new page. Derived during render (not an effect) so the close
+  // happens in the same commit as the route change, not one render later.
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   const value = useMemo(
     () => ({

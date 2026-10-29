@@ -37,7 +37,7 @@ const testimonials = [
 ];
 
 export default function TestimonialSection() {
-  const { prevRef, nextRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, prevEl, nextEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-14 sw-layout tf-spacing-1">
@@ -69,7 +69,7 @@ export default function TestimonialSection() {
           loop
           spaceBetween={15}
           slidesPerView={1}
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          navigation={{ prevEl, nextEl }}
           onSwiper={onSwiper}
           breakpoints={{
             768: { slidesPerView: 1.1, spaceBetween: 20 },

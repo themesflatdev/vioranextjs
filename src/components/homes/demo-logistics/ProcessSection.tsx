@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useSplitTextReveal } from "@/hooks/useSplitTextReveal";
 
 const steps = [
@@ -79,9 +80,9 @@ export default function ProcessSection() {
               </div>
               <div className="content">
                 <h5 className="mb_16 title">
-                  <a href="/services" className="hover-line-text link text_white">
+                  <Link href="/services" className="hover-line-text link text_white">
                     {step.title}
-                  </a>
+                  </Link>
                 </h5>
                 <p className="text-body-default text_muted">{step.desc}</p>
               </div>

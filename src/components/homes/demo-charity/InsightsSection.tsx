@@ -8,7 +8,7 @@ import { useSwiperControls } from "@/hooks/useSwiperControls";
 import { insightsPosts } from "@/data/demo-charity/home";
 
 export default function InsightsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-insights-5 sw-layout tf-spacing-1">
@@ -28,7 +28,7 @@ export default function InsightsSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 20 },

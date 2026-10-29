@@ -57,7 +57,7 @@ function CounterItem({ target, duration, suffix, label }: (typeof counters)[numb
 }
 
 export default function BenefitSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
   const leaf1Ref = useScrollTransform<HTMLDivElement>({ direction: "left", distance: "40%" });
   const leaf2Ref = useScrollTransform<HTMLDivElement>({ direction: "right", distance: "40%" });
@@ -83,7 +83,7 @@ export default function BenefitSection() {
             observer
             observeParents
             modules={[Pagination]}
-            pagination={{ el: dotsRef.current, clickable: true }}
+            pagination={{ el: dotsEl, clickable: true }}
             onSwiper={onSwiper}
             breakpoints={{
               575: { slidesPerView: 2, spaceBetween: 15 },

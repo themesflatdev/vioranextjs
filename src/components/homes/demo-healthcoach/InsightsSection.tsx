@@ -20,7 +20,7 @@ const blogDetailHref = `/blog-detail/${originalPosts[0].slug}`;
 export default function InsightsSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("scale");
-  const { prevRef, nextRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, prevEl, nextEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-insights sw-layout">
@@ -49,7 +49,7 @@ export default function InsightsSection() {
           spaceBetween={15}
           speed={1000}
           observer
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+          navigation={{ prevEl, nextEl }}
           modules={[Navigation]}
           onSwiper={onSwiper}
           breakpoints={{

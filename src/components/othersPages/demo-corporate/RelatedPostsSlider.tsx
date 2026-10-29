@@ -20,7 +20,7 @@ const relatedPosts = originalPosts.slice(5, 8);
 // 1 below 575px, 2 from 575px, 2 from 768px (spaceBetween 20), 3 from 992px
 // and 1200px up (spaceBetween 20).
 export default function RelatedPostsSlider() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="tf-container sw-layout tf-spacing-1 pt-0">
@@ -34,7 +34,7 @@ export default function RelatedPostsSlider() {
         slidesPerView={1}
         spaceBetween={15}
         speed={1000}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
         breakpoints={{
           575: { slidesPerView: 2, spaceBetween: 15 },

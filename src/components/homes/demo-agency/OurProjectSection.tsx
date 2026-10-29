@@ -59,7 +59,7 @@ export default function OurProjectSection() {
   const isMobile = useMediaQuery("(max-width: 767px)");
   const [activeIndex, setActiveIndex] = useState(0);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -112,7 +112,7 @@ export default function OurProjectSection() {
                 modules={[Pagination]}
                 slidesPerView={1}
                 spaceBetween={15}
-                pagination={{ el: dotsRef.current, clickable: true }}
+                pagination={{ el: dotsEl, clickable: true }}
                 onSwiper={onSwiper}
                 wrapperClass="wrap-box-hover-active"
               >

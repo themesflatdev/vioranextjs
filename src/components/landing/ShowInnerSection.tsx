@@ -28,7 +28,7 @@ const slides = [...innerPages, ...innerPages];
 export default function ShowInnerSection() {
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-show-inner sw-layout tf-spacing-17">
@@ -47,7 +47,7 @@ export default function ShowInnerSection() {
         spaceBetween={15}
         speed={1000}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ el: dotsRef.current, clickable: true }}
+        pagination={{ el: dotsEl, clickable: true }}
         onSwiper={onSwiper}
         breakpoints={{
           575: { slidesPerView: 2, spaceBetween: 15 },

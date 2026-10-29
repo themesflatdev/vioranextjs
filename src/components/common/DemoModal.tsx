@@ -29,11 +29,17 @@ export default function DemoModal({ open, onClose }: DemoModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
+  // Hydration-safe mount flag (createPortal needs document.body, unavailable
+  // during SSR) — runs once, not derivable from props.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (open) {
       previousFocusRef.current = document.activeElement as HTMLElement | null;
+      // Coupled with the focus-capture line above and the close-side timer
+      // below in the same effect — not a pure prop derivation.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShouldRender(true);
       return undefined;
     }

@@ -20,7 +20,7 @@ function Ratings() {
 }
 
 export default function TestimonialSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-13 tf-spacing-1 sw-layout">
@@ -50,7 +50,7 @@ export default function TestimonialSection() {
           observer
           observeParents
           modules={[Pagination]}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 10 },

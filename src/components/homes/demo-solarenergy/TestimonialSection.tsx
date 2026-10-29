@@ -42,7 +42,7 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 export default function TestimonialSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-15 sw-layout tf-spacing-1">
@@ -99,7 +99,7 @@ export default function TestimonialSection() {
                 992: { slidesPerView: 2.4, spaceBetween: 20 },
                 1200: { slidesPerView: 3.16, spaceBetween: 20 },
               }}
-              pagination={{ el: dotsRef.current, clickable: true }}
+              pagination={{ el: dotsEl, clickable: true }}
               onSwiper={onSwiper}
             >
               {TESTIMONIALS.map((item) => (

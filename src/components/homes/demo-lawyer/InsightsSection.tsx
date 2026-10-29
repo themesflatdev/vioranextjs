@@ -18,7 +18,7 @@ const blogDetailHref = `/blog-detail/${originalPosts[0].slug}`;
 // absent here so the 1200 breakpoint falls back to preview=3 (unlike the
 // corporate InsightsSection, which does set data-screen-xl=4).
 export default function InsightsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("right");
 
   return (
@@ -41,7 +41,7 @@ export default function InsightsSection() {
           slidesPerView={1}
           spaceBetween={15}
           speed={1000}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 15 },

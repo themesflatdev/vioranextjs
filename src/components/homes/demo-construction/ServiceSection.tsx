@@ -52,7 +52,7 @@ export default function ServiceSection() {
   const subRef = useSplitTextReveal<HTMLDivElement>("left");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
   const descRef = useSplitTextReveal<HTMLParagraphElement>("lines-transform");
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-service-9 tf-spacing-1 sw-layout">
@@ -87,8 +87,8 @@ export default function ServiceSection() {
           speed={1000}
           slidesPerView={1}
           spaceBetween={10}
-          navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          navigation={{ prevEl, nextEl }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           breakpoints={{
             575: { slidesPerView: 2, spaceBetween: 10 },

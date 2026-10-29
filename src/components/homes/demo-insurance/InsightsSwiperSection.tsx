@@ -43,7 +43,7 @@ const posts = [
 // 768=tablet(2)/space-md(24), 992=preview(3)/space-lg(40), 1200=screenXl
 // (falls back to preview=3)/spaceXl (falls back to space-lg=40).
 export default function InsightsSwiperSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const subRef = useSplitTextReveal<HTMLDivElement>("up");
   const titleRef = useSplitTextReveal<HTMLHeadingElement>("blur-fade");
 
@@ -63,7 +63,7 @@ export default function InsightsSwiperSection() {
           slidesPerView={1}
           spaceBetween={15}
           speed={1000}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           modules={[Pagination]}
           onSwiper={onSwiper}
           breakpoints={{

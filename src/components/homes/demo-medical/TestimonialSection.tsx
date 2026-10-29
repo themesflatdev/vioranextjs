@@ -6,7 +6,7 @@ import { testimonials } from "@/data/demo-medical/testimonials";
 import { useSwiperControls } from "@/hooks/useSwiperControls";
 
 export default function TestimonialSection() {
-  const { prevRef, nextRef, dotsRef, onSwiper } = useSwiperControls();
+  const { prevRef, nextRef, dotsRef, prevEl, nextEl, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-testimonial-3 sw-layout tf-spacing-7">
@@ -19,8 +19,8 @@ export default function TestimonialSection() {
               loop
               speed={1000}
               slidesPerView={1}
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
-              pagination={{ el: dotsRef.current, clickable: true }}
+              navigation={{ prevEl, nextEl }}
+              pagination={{ el: dotsEl, clickable: true }}
               onSwiper={onSwiper}
             >
               {testimonials.map((testimonial, index) => (
@@ -37,13 +37,13 @@ export default function TestimonialSection() {
                     {index === 0 ? (
                       <ul className="d-flex gap_1 align-items-center justify-content-center">
                         <li className="h6 font-2">{testimonial.author}</li>
-                        <li className="text_primary text-title fw-5">//</li>
+                        <li className="text_primary text-title fw-5">{"//"}</li>
                         <li className="text-body-default font-2 text_primary font-main">{testimonial.role}</li>
                       </ul>
                     ) : (
                       <ul className="d-flex gap_4 align-items-center justify-content-center">
                         <li className="h6 font-2">{testimonial.author}</li>
-                        <li className="text_primary text-title fw-5">//</li>
+                        <li className="text_primary text-title fw-5">{"//"}</li>
                         <li className="text-body-2 font-2 text_primary">{testimonial.role}</li>
                       </ul>
                     )}

@@ -8,7 +8,7 @@ import { useSwiperControls } from "@/hooks/useSwiperControls";
 import { testimonial } from "@/data/demo-restaurant/testimonials";
 
 export default function TestimonialSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
   const item1Ref = useScrollTransform<HTMLDivElement>({ direction: "left", distance: "10%" });
   const item2Ref = useScrollTransform<HTMLDivElement>({ direction: "left", distance: "30%" });
   const item3Ref = useScrollTransform<HTMLDivElement>({ direction: "left", distance: "50%" });
@@ -33,7 +33,7 @@ export default function TestimonialSection() {
               observeParents
               slidesPerView={1}
               spaceBetween={20}
-              pagination={{ el: dotsRef.current, clickable: true }}
+              pagination={{ el: dotsEl, clickable: true }}
               onSwiper={onSwiper}
             >
               {Array.from({ length: 3 }).map((_, index) => (

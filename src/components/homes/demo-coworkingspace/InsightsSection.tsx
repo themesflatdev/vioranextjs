@@ -12,7 +12,7 @@ import { insightPosts, BLOG_DETAIL_HREF } from "@/data/demo-coworkingspace/insig
 // data-space-lg=40 → <575 1 slide space15, 575-767 2 slide space15,
 // 768-991 2 slide space20, >=992 3 slide space40.
 export default function InsightsSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-insights-5 sw-layout tf-spacing-1 pt-0">
@@ -26,7 +26,7 @@ export default function InsightsSection() {
           slidesPerView={1}
           spaceBetween={15}
           observer
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           modules={[Pagination]}
           onSwiper={onSwiper}
           breakpoints={{

@@ -37,7 +37,7 @@ const plans = [
 ];
 
 export default function PricingSection() {
-  const { dotsRef, onSwiper } = useSwiperControls();
+  const { dotsRef, dotsEl, onSwiper } = useSwiperControls();
 
   return (
     <div className="section-pricing-8 sw-layout tf-spacing-1 pt-0">
@@ -54,7 +54,7 @@ export default function PricingSection() {
           modules={[Pagination]}
           speed={1000}
           loop={false}
-          pagination={{ el: dotsRef.current, clickable: true }}
+          pagination={{ el: dotsEl, clickable: true }}
           onSwiper={onSwiper}
           slidesPerView={1}
           spaceBetween={15}
