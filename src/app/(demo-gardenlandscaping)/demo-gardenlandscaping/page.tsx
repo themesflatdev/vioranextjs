@@ -1,8 +1,4 @@
-"use client";
-
-import Image from "next/image";
-import { NormalHeader } from "@/components/layout/demo-gardenlandscaping/HeaderSection";
-import { useImageParallax } from "@/hooks/useImageParallax";
+import ParallaxHeroWrap from "@/components/homes/demo-gardenlandscaping/ParallaxHeroWrap";
 import HeroSection from "@/components/homes/demo-gardenlandscaping/HeroSection";
 import AboutSection10 from "@/components/homes/demo-gardenlandscaping/AboutSection10";
 import BenefitSection from "@/components/homes/demo-gardenlandscaping/BenefitSection";
@@ -14,24 +10,11 @@ import TestimonialSection from "@/components/homes/demo-gardenlandscaping/Testim
 import BannerSection from "@/components/homes/demo-gardenlandscaping/BannerSection";
 
 export default function GardenlandscapingHome() {
-  const parallaxRef = useImageParallax<HTMLDivElement>();
-
   return (
     <>
-      <div className="wrap-header-hero parallax-container" ref={parallaxRef}>
-        <div className="thumbs parallax-image">
-          <Image
-            className="image-inner"
-            width={1920}
-            height={840}
-            loading="eager"
-            src="/assets/images/demo-gardenlandscaping/hero-1.jpg"
-            alt="hero"
-          />
-        </div>
-        <NormalHeader />
+      <ParallaxHeroWrap>
         <HeroSection />
-      </div>
+      </ParallaxHeroWrap>
       <div className="main-content">
         <AboutSection10 />
         <BenefitSection />

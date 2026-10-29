@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 // NOTE: video-coworking.mp4 chưa có trong public/assets/video/ (người dùng
