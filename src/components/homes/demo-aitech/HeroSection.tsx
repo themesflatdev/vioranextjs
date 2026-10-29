@@ -29,7 +29,7 @@ export default function HeroSection() {
   return (
     <div className="hero-banner-6">
       <div className="parallax-video thumbs-video">
-        <video className="video-inner" ref={videoRef} muted autoPlay loop playsInline>
+        <video className="video-inner" ref={videoRef} muted autoPlay loop playsInline preload="metadata">
           <source src="/assets/video/video-techai.mp4" type="video/mp4" />
         </video>
       </div>

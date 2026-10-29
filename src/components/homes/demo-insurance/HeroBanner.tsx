@@ -21,7 +21,7 @@ export default function HeroBanner() {
   return (
     <div className="hero-banner-3 parallax-container overflow-hidden" ref={parallaxRef}>
       <div className="parallax-video">
-        <video className="thumbs-video video-inner" muted autoPlay loop playsInline>
+        <video className="thumbs-video video-inner" muted autoPlay loop playsInline preload="metadata">
           <source src="/assets/video/medical-video.mp4" type="video/mp4" />
         </video>
       </div>
