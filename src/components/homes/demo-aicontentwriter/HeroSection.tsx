@@ -59,7 +59,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="thumbs" data-ns-animate data-duration="1" ref={heroImageRef}>
-          <Image width={1410} height={705} loading="eager" src="/assets/images/demo-aicontentwriter/hero.jpg" alt="AIcontent-hero" />
+          <Image width={1410} height={705} priority src="/assets/images/demo-aicontentwriter/hero.jpg" alt="AIcontent-hero" />
         </div>
       </div>
     </div>

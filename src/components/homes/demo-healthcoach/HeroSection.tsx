@@ -57,7 +57,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="thumbs tf-animateCLP-right" ref={thumbRef}>
-            <Image width={920} height={680} loading="lazy" src="/assets/images/demo-healthcoach/hero-1.jpg" alt="health-coach-hero" />
+            <Image width={920} height={680} priority src="/assets/images/demo-healthcoach/hero-1.jpg" alt="health-coach-hero" />
           </div>
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function HeroSlider() {
                 </div>
                 <div className="col-lg-6">
                   <div className="thumbs effect-item effect-right delay-4">
-                    <Image width={594} height={633} src="/assets/images/demo-medical/medical-hero-1.jpg" alt="medical-hero" />
+                    <Image width={594} height={633} priority src="/assets/images/demo-medical/medical-hero-1.jpg" alt="medical-hero" />
                   </div>
                 </div>
               </div>

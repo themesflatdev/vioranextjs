@@ -48,6 +48,7 @@ export default function HeroSlider() {
 
   return (
     <div className="tf-slider-7">
+      <link rel="preload" as="image" href={slides[0].image} fetchPriority="high" />
       <Swiper
         className="swiper sw-single effect-content-slide"
         modules={[Parallax, Autoplay, Thumbs]}
