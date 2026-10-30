@@ -40,6 +40,7 @@ export default function BlogListSection() {
                       <Link
                         href={`/demo-spasalon/blogdetail/${post.slug}`}
                         className="link hover-underline-link text-button text_secondary-color"
+                        aria-label={`Read more: ${post.title}`}
                       >
                         Read More
                       </Link>

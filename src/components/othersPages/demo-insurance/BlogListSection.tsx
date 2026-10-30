@@ -46,7 +46,11 @@ export default function BlogListSection() {
                       </h4>
                       <p className="text-body-default text_secondary">{post.excerpt}</p>
                       <div>
-                        <Link href={href} className="link hover-underline-link text-button text_secondary-color">
+                        <Link
+                          href={href}
+                          className="link hover-underline-link text-button text_secondary-color"
+                          aria-label={`Read more: ${post.title}`}
+                        >
                           Read More
                         </Link>
                       </div>

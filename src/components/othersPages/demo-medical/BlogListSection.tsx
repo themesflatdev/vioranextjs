@@ -48,6 +48,7 @@ export default function BlogListSection() {
             <Link
               href={`/demo-medical/blogdetail/${post.slug}`}
               className="text-button hover-underline-link text_primary readmore"
+              aria-label={`Read more: ${post.title}`}
             >
               Read More
             </Link>
