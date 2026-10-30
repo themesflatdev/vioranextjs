@@ -37,7 +37,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
 
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            {children}
+            <main>{children}</main>
             <div className="tf-container w-1840">
               <Footer />
             </div>

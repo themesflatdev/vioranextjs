@@ -77,7 +77,6 @@ export default function FaqSection() {
                       type="text"
                       placeholder="Your Name"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -87,7 +86,6 @@ export default function FaqSection() {
                       type="number"
                       placeholder="Phone Number"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -100,7 +98,6 @@ export default function FaqSection() {
                       type="text"
                       placeholder="Pickup Address"
                       name="email"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -112,7 +109,6 @@ export default function FaqSection() {
                       type="text"
                       placeholder="Delivery Address"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -136,7 +132,6 @@ export default function FaqSection() {
                     id="comment"
                     rows={4}
                     placeholder="Additional Notes"
-                    tabIndex={2}
                     aria-required="true"
                     required
                   ></textarea>

@@ -158,16 +158,16 @@ export default function Header({ fixed = false, isSticky = false, onOpenMobileNa
       <div className="header-right d-flex align-items-center gap_20">
         <ul className="tf-social style-4 sm-hide">
           <li>
-            <a href="#" className="icon-Linkedin" />
+            <a href="#" className="icon-Linkedin" aria-label="LinkedIn" />
           </li>
           <li>
-            <a href="#" className="icon-XLogo-2" />
+            <a href="#" className="icon-XLogo-2" aria-label="X (Twitter)" />
           </li>
           <li>
-            <a href="#" className="icon-InsLogo-fill" />
+            <a href="#" className="icon-InsLogo-fill" aria-label="Instagram" />
           </li>
           <li>
-            <a href="#" className="icon-Youtube" />
+            <a href="#" className="icon-Youtube" aria-label="YouTube" />
           </li>
         </ul>
         <div

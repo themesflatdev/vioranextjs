@@ -6,6 +6,8 @@ import { contactHref } from "@/data/demo-medical/menu";
 import { useMultiOpen } from "@/hooks/useMultiOpen";
 import { medicalServices } from "@/data/demo-medical/services";
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-messenger-logo" },
   { href: "#", icon: "icon-x-logo" },
@@ -43,7 +45,7 @@ export default function Footer() {
           <ul className="tf-social style-2 d-flex gap_16">
             {socialLinks.map((social) => (
               <li key={social.icon}>
-                <a href={social.href} className={social.icon} />
+                <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
               </li>
             ))}
           </ul>
@@ -134,7 +136,7 @@ export default function Footer() {
                         required
                       />
                     </fieldset>
-                    <button name="submit" type="submit" className="button-submit">
+                    <button name="submit" type="submit" className="button-submit" aria-label="Subscribe">
                       <span className="icon-PaperPlaneTilt" />
                     </button>
                   </div>

@@ -101,7 +101,7 @@ export default function PricingSection() {
 
         <div className="tab-slide style-1 d-flex justify-content-center mb_40" ref={tabSlideRef}>
           <ul className="menu-tab d-inline-flex align-items-center justify-content-center" role="tablist">
-            <li className="item-slide-effect" />
+            <li className="item-slide-effect" role="presentation" />
             <li className={`nav-tab-item${period === "monthly" ? " active" : ""}`} role="presentation">
               <a
                 href="#standard-plan"

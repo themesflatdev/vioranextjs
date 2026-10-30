@@ -19,16 +19,16 @@ export default function TopBar() {
         <div className="tb-right d-flex align-items-center gap_8">
           <ul className="tf-social style-3 d-flex gap_12">
             <li>
-              <a href="#" className="icon-Linkedin" />
+              <a href="#" className="icon-Linkedin" aria-label="LinkedIn" />
             </li>
             <li>
-              <a href="#" className="icon-XLogo-2" />
+              <a href="#" className="icon-XLogo-2" aria-label="X (Twitter)" />
             </li>
             <li>
-              <a href="#" className="icon-InsLogo-fill" />
+              <a href="#" className="icon-InsLogo-fill" aria-label="Instagram" />
             </li>
             <li>
-              <a href="#" className="icon-Youtube" />
+              <a href="#" className="icon-Youtube" aria-label="YouTube" />
             </li>
           </ul>
         </div>

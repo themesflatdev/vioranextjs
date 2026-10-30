@@ -134,12 +134,12 @@ export default function Header({ fixed = false, isSticky = false, onOpenMobileNa
           <div className="header-right d-flex align-items-center gap_20">
             <ul className="nav-icon-list">
               <li>
-                <a className="nav-icon-item link" href="#search">
+                <a className="nav-icon-item link" href="#search" aria-label="Search">
                   <i className="icon icon-MagnifyingGlass" />
                 </a>
               </li>
               <li className="shop-cart">
-                <a className="nav-icon-item link" href="#shoppingCart">
+                <a className="nav-icon-item link" href="#shoppingCart" aria-label="Shopping cart">
                   <i className="icon icon-Handbag" />
                 </a>
                 <span className="count">2</span>

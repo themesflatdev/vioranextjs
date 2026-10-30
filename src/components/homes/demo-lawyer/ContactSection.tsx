@@ -89,7 +89,7 @@ export default function ContactSection() {
                 <input type="number" placeholder="Phone Number" name="text" aria-required="true" required />
               </fieldset>
               <fieldset>
-                <input className="input-has-icon" type="date" aria-required="true" required />
+                <input className="input-has-icon" type="date" aria-label="Preferred date" aria-required="true" required />
                 <i className="icon-CalendarBlank" />
               </fieldset>
             </div>

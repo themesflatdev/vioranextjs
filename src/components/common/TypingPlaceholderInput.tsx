@@ -68,7 +68,12 @@ export default function TypingPlaceholderInput({
 
   return (
     <fieldset className="position-relative">
-      <input type={type} className="input-field animated-input" placeholder=" " />
+      <input
+        type={type}
+        className="input-field animated-input"
+        placeholder=" "
+        aria-label={placeholders.split("|")[0]}
+      />
       <div className="placeholder-wrapper">
         <span className="placeholder-text typing-animation" ref={placeholderRef} />
         <span className="cursor" />

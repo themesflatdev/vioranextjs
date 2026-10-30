@@ -18,7 +18,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <Header onOpenMobileNav={() => setMobileNavOpen(true)} />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </div>

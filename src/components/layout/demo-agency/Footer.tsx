@@ -13,6 +13,8 @@ const quickLinks: Array<{ label: string; href: string }> = [
   { label: "Contact", href: contactHref },
 ];
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-FaceBook-2" },
   { href: "#", icon: "icon-Linkedin" },
@@ -91,7 +93,7 @@ export default function Footer() {
                       required
                     />
                   </fieldset>
-                  <button name="submit" type="submit" className="button-submit">
+                  <button name="submit" type="submit" className="button-submit" aria-label="Subscribe">
                     <i className="icon-PaperPlaneTilt" />
                   </button>
                 </div>
@@ -99,7 +101,7 @@ export default function Footer() {
               <ul className="tf-social">
                 {socialLinks.map((social) => (
                   <li key={social.icon}>
-                    <a href={social.href} className={social.icon} />
+                    <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
                   </li>
                 ))}
               </ul>

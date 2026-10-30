@@ -44,7 +44,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
             <Header onOpenMobileNav={() => setMobileNavOpen(true)} />
             <HeroSection />
           </div>
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </div>

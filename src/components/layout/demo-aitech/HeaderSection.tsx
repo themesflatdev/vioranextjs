@@ -23,7 +23,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
       <div id="wrapper">
         <Header fixed isSticky={isSticky} onOpenMobileNav={() => setMobileNavOpen(true)} />
         <Header onOpenMobileNav={() => setMobileNavOpen(true)} />
-        {children}
+        <main>{children}</main>
         <Footer />
       </div>
       <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />

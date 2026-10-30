@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useMultiOpen } from "@/hooks/useMultiOpen";
 import { contactInfo, footerAddress } from "@/data/demo-corporate/contactInfo";
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-messenger-logo" },
   { href: "#", icon: "icon-x-logo" },
@@ -127,7 +129,7 @@ export default function Footer() {
                   <ul className="tf-social">
                     {socialLinks.map((social) => (
                       <li key={social.icon}>
-                        <a href={social.href} className={social.icon} />
+                        <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
                       </li>
                     ))}
                   </ul>

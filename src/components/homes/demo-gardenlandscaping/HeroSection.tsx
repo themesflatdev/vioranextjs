@@ -80,13 +80,12 @@ export default function HeroSection() {
                     type="text"
                     placeholder="Your Name"
                     name="text"
-                    tabIndex={2}
                     aria-required="true"
                     required
                   />
                 </fieldset>
                 <fieldset>
-                  <input type="email" placeholder="Email" name="text" tabIndex={2} aria-required="true" required />
+                  <input type="email" placeholder="Email" name="text" aria-required="true" required />
                 </fieldset>
                 <fieldset>
                   <input
@@ -94,7 +93,6 @@ export default function HeroSection() {
                     type="number"
                     placeholder="Phone Number"
                     name="text"
-                    tabIndex={2}
                     aria-required="true"
                     required
                   />
@@ -104,7 +102,6 @@ export default function HeroSection() {
                     id="comment"
                     rows={4}
                     placeholder="Your message"
-                    tabIndex={2}
                     aria-required="true"
                     required
                   />

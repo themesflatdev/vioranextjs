@@ -73,7 +73,6 @@ export default function WorkTogetherSection() {
                       type="text"
                       placeholder="First Name"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -85,7 +84,6 @@ export default function WorkTogetherSection() {
                       type="text"
                       placeholder="Last Name"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -99,7 +97,6 @@ export default function WorkTogetherSection() {
                       type="email"
                       placeholder="Email"
                       name="email"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -111,7 +108,6 @@ export default function WorkTogetherSection() {
                       type="number"
                       placeholder="Phone Number"
                       name="text"
-                      tabIndex={2}
                       aria-required="true"
                       required
                     />
@@ -123,7 +119,6 @@ export default function WorkTogetherSection() {
                     className="style-line-bottom"
                     rows={4}
                     placeholder="Your Message"
-                    tabIndex={2}
                     aria-required="true"
                     required
                   />

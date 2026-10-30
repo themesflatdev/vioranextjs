@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMultiOpen } from "@/hooks/useMultiOpen";
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-messenger-logo" },
   { href: "#", icon: "icon-x-logo" },
@@ -50,7 +52,7 @@ export default function Footer() {
           <ul className="tf-social">
             {socialLinks.map((social) => (
               <li key={social.icon}>
-                <a href={social.href} className={social.icon} />
+                <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
               </li>
             ))}
           </ul>
@@ -132,14 +134,14 @@ export default function Footer() {
                       required
                     />
                   </fieldset>
-                  <button name="submit" type="submit" className="button-submit">
+                  <button name="submit" type="submit" className="button-submit" aria-label="Subscribe">
                     <span className="icon-PaperPlaneTilt" />
                   </button>
                 </div>
               </form>
               <div className="box-fieldset-item d-flex align-items-center">
                 <fieldset>
-                  <input type="checkbox" className="tf-check" id="note" />
+                  <input type="checkbox" className="tf-check" id="note" aria-label="I consent to receive legal updates & news" />
                 </fieldset>
                 <p className="text-caption-1 text_muted">
                   I consent to receive legal updates &amp; news.

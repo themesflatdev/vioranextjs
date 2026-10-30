@@ -50,7 +50,7 @@ export default function Footer() {
                       required
                     />
                   </fieldset>
-                  <button name="submit" type="submit" className="button-submit">
+                  <button name="submit" type="submit" className="button-submit" aria-label="Subscribe">
                     <span className="icon-PaperPlaneTilt" />
                   </button>
                 </div>

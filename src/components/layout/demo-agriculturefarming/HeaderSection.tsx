@@ -24,7 +24,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
         <div id="smooth-content">
           <TopBar />
           <Header onOpenMobileNav={() => setMobileNavOpen(true)} />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </div>

@@ -19,6 +19,9 @@ export function useTextChangeColor<T extends HTMLElement = HTMLElement>() {
     if (!target) return;
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
+    // SplitText's default accessible:true sets aria-label on `target` — give it
+    // role="text" so that's valid ARIA (a bare div/p doesn't support naming).
+    target.setAttribute("role", "text");
     const split = new SplitText(target, { type: "lines" });
     const tweens = split.lines.map((line) =>
       gsap.to(line, {

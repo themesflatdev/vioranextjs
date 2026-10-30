@@ -32,6 +32,9 @@ export function useSplitTextReveal<T extends HTMLElement = HTMLElement>(effect: 
     if (!target) return;
 
     gsap.registerPlugin(ScrollTrigger, SplitText);
+    // SplitText's default accessible:true sets aria-label on `target` — give it
+    // role="text" so that's valid ARIA (a bare div/p doesn't support naming).
+    target.setAttribute("role", "text");
     const split = new SplitText(target, { type: "words, chars", lineThreshold: 0.5, linesClass: "split-line" });
     let splitSet: Element[] = split.chars;
     gsap.set(target, { perspective: 400 });

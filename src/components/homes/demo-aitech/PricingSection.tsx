@@ -85,7 +85,7 @@ export default function PricingSection() {
             role="tablist"
             ref={tabListRef}
           >
-            <li className="item-slide-effect" />
+            <li className="item-slide-effect" role="presentation" />
             <li className={`nav-tab-item${period === "monthly" ? " active" : ""}`} role="presentation">
               <a
                 href="#standard-plan"

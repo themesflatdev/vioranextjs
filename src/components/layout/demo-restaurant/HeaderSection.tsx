@@ -22,7 +22,7 @@ export default function HeaderSection({ children }: { children: ReactNode }) {
       <div id="smooth-wrapper" className="bg-dark-color-2 smooth-wrapper-restaurant">
         <div id="smooth-content">
           <Header onOpenMobileNav={() => setMobileNavOpen(true)} />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </div>

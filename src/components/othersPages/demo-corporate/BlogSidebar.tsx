@@ -24,7 +24,6 @@ export default function BlogSidebar() {
               type="text"
               placeholder="Search products..."
               name="text"
-              tabIndex={2}
               aria-required="true"
               required
             />
@@ -126,7 +125,6 @@ export default function BlogSidebar() {
               type="text"
               placeholder="Email address"
               name="text"
-              tabIndex={2}
               aria-required="true"
               required
             />

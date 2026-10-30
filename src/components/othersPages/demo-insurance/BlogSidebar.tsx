@@ -17,7 +17,7 @@ export default function BlogSidebar() {
       <div className="sidebar-item sidebar-author">
         <form action="#" className="form-search style-2 mb_30" onSubmit={(e) => e.preventDefault()}>
           <fieldset>
-            <input type="text" placeholder="Search products..." name="text" tabIndex={2} aria-required="true" required />
+            <input type="text" placeholder="Search products..." name="text" aria-required="true" required />
           </fieldset>
           <div className="button-submit">
             <button type="submit">
@@ -96,7 +96,7 @@ export default function BlogSidebar() {
         <h6 className="sidebar-title text_primary mb_16">Subscribe Newsletter</h6>
         <form action="#" className="form-newsletter" onSubmit={(e) => e.preventDefault()}>
           <fieldset>
-            <input type="text" placeholder="Email address" name="text" tabIndex={2} aria-required="true" required />
+            <input type="text" placeholder="Email address" name="text" aria-required="true" required />
           </fieldset>
           <div className="button-submit">
             <button type="submit">

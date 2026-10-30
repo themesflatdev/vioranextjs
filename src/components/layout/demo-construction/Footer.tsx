@@ -18,6 +18,8 @@ const columns = [
   },
 ] as const;
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-messenger-logo" },
   { href: "#", icon: "icon-x-logo" },
@@ -52,7 +54,7 @@ export default function Footer() {
               <ul className="social d-flex gap_12">
                 {socialLinks.map((social) => (
                   <li key={social.icon}>
-                    <a href={social.href} className={social.icon} />
+                    <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
                   </li>
                 ))}
               </ul>

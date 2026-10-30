@@ -129,16 +129,16 @@ export default function Header({ fixed = false, isFixed = false, onOpenMobileNav
           <div className="header-right d-flex align-items-center gap_20">
             <ul className="tf-social style-3 sm-hide">
               <li>
-                <a href="#" className="icon-Linkedin" />
+                <a href="#" className="icon-Linkedin" aria-label="LinkedIn" />
               </li>
               <li>
-                <a href="#" className="icon-x-logo" />
+                <a href="#" className="icon-x-logo" aria-label="X (Twitter)" />
               </li>
               <li>
-                <a href="#" className="icon-instagram-logo" />
+                <a href="#" className="icon-instagram-logo" aria-label="Instagram" />
               </li>
               <li>
-                <a href="#" className="icon-Youtube" />
+                <a href="#" className="icon-Youtube" aria-label="YouTube" />
               </li>
             </ul>
             <div

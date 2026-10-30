@@ -5,6 +5,8 @@ import Link from "next/link";
 import { contactHref } from "@/data/demo-spasalon/menu";
 import { useMultiOpen } from "@/hooks/useMultiOpen";
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-FaceBook-2" },
   { href: "#", icon: "icon-x-logo" },
@@ -42,7 +44,7 @@ export default function Footer() {
                 <ul className="tf-social style-3">
                   {socialLinks.map((social) => (
                     <li key={social.icon}>
-                      <a href={social.href} className={social.icon} />
+                      <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
                     </li>
                   ))}
                 </ul>

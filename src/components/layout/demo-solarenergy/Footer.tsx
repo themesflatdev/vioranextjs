@@ -26,6 +26,8 @@ const quickLinks = [
 
 const servicesLinks = ["Hybrid Energy", "Renewable Energy", "Solar Maintenance", "Solar PV Systems"];
 
+import { socialIconLabel } from "@/lib/socialIconLabel";
+
 const socialLinks = [
   { href: "#", icon: "icon-FacebookLogo" },
   { href: "#", icon: "icon-x-logo" },
@@ -147,7 +149,7 @@ export default function Footer() {
                         required
                       />
                     </fieldset>
-                    <button name="submit" type="submit" className="button-submit">
+                    <button name="submit" type="submit" className="button-submit" aria-label="Subscribe">
                       <span className="icon-PaperPlaneTilt" />
                     </button>
                   </div>
@@ -174,7 +176,7 @@ export default function Footer() {
           <ul className="social d-flex gap_24">
             {socialLinks.map((social) => (
               <li key={social.icon}>
-                <a href={social.href} className={social.icon} />
+                <a href={social.href} className={social.icon} aria-label={socialIconLabel(social.icon)} />
               </li>
             ))}
           </ul>

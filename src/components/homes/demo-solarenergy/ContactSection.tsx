@@ -58,7 +58,6 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Full Name"
                   name="text"
-                  tabIndex={2}
                   aria-required="true"
                   required
                 />
@@ -71,7 +70,6 @@ export default function ContactSection() {
                   type="number"
                   placeholder="Phone Number"
                   name="text"
-                  tabIndex={2}
                   aria-required="true"
                   required
                 />
@@ -81,7 +79,6 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Installation Address"
                   name="email"
-                  tabIndex={2}
                   aria-required="true"
                   required
                 />
@@ -93,7 +90,6 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Your Average Monthly Bill?"
                   name="text"
-                  tabIndex={2}
                   aria-required="true"
                   required
                 />
@@ -103,7 +99,6 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Required Solar Plant Capacity (in kW)"
                   name="text"
-                  tabIndex={2}
                   aria-required="true"
                   required
                 />

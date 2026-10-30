@@ -231,16 +231,16 @@ export default function BlogDetailBody({
             <div className="tf-grid-layout md-col-2 gap_20 mb_20">
               <fieldset>
                 <label htmlFor="name" className="text-body-default text_secondary mb_8">Name</label>
-                <input id="name" type="text" placeholder="Your Name*" name="text" tabIndex={2} aria-required="true" required />
+                <input id="name" type="text" placeholder="Your Name*" name="text" aria-required="true" required />
               </fieldset>
               <fieldset>
                 <label htmlFor="email" className="text-body-default text_secondary mb_8">Email</label>
-                <input id="email" type="email" placeholder="Your Email*" name="email" tabIndex={2} aria-required="true" required />
+                <input id="email" type="email" placeholder="Your Email*" name="email" aria-required="true" required />
               </fieldset>
             </div>
             <fieldset>
               <label htmlFor="comment" className="text-body-default text_secondary mb_8">Review</label>
-              <textarea id="comment" rows={4} placeholder="Write comment" tabIndex={2} aria-required="true" required />
+              <textarea id="comment" rows={4} placeholder="Write comment" aria-required="true" required />
             </fieldset>
           </div>
           <div className="box-fieldset-item d-flex mb_20 align-items-center">
